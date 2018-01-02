@@ -1,0 +1,64 @@
+{% load staticfiles %}
+<script src="{% static 'polls/js/alert_columns_form.js' %}"></script>
+<link rel="stylesheet" href="{% static 'polls/css/academic_officer_alert.css' %}"/>
+<style type="text/css">
+    #columns-form{
+        width: 700px;
+        min-height:150px;
+        position:fixed;
+        margin: 0 auto;
+        padding-top: 14px;
+        padding-bottom: 20px;
+        top: -600px;
+        left:50%;
+        margin-left:-275px;
+        -webkit-box-shadow: 0 0 10px rgba(0,0,0,.4);
+        z-index: 9999;
+        text-align: center;
+        background-color: ghostwhite;
+        border-radius: 5px;
+    }
+</style>
+<div id="columns-form">
+        <div id="new_index_title"><h1>教师信息</h1></div>
+        <table class="user_info_content_table">
+            <tr>
+                <th>账号</th>
+                <td>{{ user.username }}</td>
+                <th>教职工号</th>
+                <td>{{ user.profile.stuff_card }}</td>
+            </tr>
+            <tr>
+                <th>姓名</th>
+                <td>{{ user.first_name }}</td>
+                <th>性别</th>
+                <td>{{ user.profile.get_sex_display }}</td>
+            </tr>
+            <tr>
+                <th>出生日期</th>
+                <td>{{ user.profile.birth }}</td>
+                <th>毕业院校</th>
+                <td>{{ user.profile.school }}</td>
+            </tr>
+            <tr>
+                <th>所学专业</th>
+                <td>{{ user.profile.major }}</td>
+                <th>所在部门</th>
+                <td>{{ user.profile.get_department_display }}</td>
+            </tr>
+            <tr>
+                <th>用户职称</th>
+                <td>{{ user.profile.get_title_display }}</td>
+                <th>用户权限</th>
+                <td>{{ user.profile.get_authority_display }}</td>
+            </tr>
+            <tr>
+                <th>用户电话</th>
+                <td>{{ user.profile.phone }}</td>
+            </tr>
+        </table>
+        <input class=" button-group cancel_new_index_teacher" type="button" value="确认">
+    </div>
+<div id="cover">
+
+</div>

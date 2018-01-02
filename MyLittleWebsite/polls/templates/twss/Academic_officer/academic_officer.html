@@ -1,0 +1,326 @@
+{% extends 'twss/baseB.html' %}
+{% load staticfiles %}
+{% block headmeta1 %}
+    <link rel="stylesheet" href={% static "polls/css/academic_officer.css" %}>
+    <script type="text/javascript">
+    $(document).ready(function () {
+{#        生物技术#}
+        $("#A_O_S_J_jiao_xue_cheng_guo").click(function () {
+            $("#div_user_info").load("{% url 'polls:index_A_O_SJ_teaching_achievement' 1 %}")
+
+        });
+        $("#A_O_S_J_jing_sai_zhi_dao").click(function () {
+            $("#div_user_info").load("{% url 'polls:index_A_O_SJ_competition_guide' 1 %}")
+
+        });
+        $("#A_O_S_J_jiao_xue_xiang_mu").click(function () {
+            $("#div_user_info").load("{% url 'polls:index_A_O_SJ_teaching_object' 1 %}")
+
+        });
+        $("#A_O_S_J_lun_wen_zhi_dao").click(function () {
+            $("#div_user_info").load("{% url 'polls:index_A_O_SJ_paper_guide' 1 %}")
+
+        });
+{#        生物工程#}
+        $("#A_O_S_G_jiao_xue_cheng_guo").click(function () {
+            $("#div_user_info").load("{% url 'polls:index_A_O_SJ_teaching_achievement' 2 %}")
+
+        });
+        $("#A_O_S_G_jing_sai_zhi_dao").click(function () {
+            $("#div_user_info").load("{% url 'polls:index_A_O_SJ_competition_guide' 2 %}")
+
+        });
+        $("#A_O_S_G_jiao_xue_xiang_mu").click(function () {
+            $("#div_user_info").load("{% url 'polls:index_A_O_SJ_teaching_object' 2 %}")
+
+        });
+        $("#A_O_S_G_lun_wen_zhi_dao").click(function () {
+            $("#div_user_info").load("{% url 'polls:index_A_O_SJ_paper_guide' 2 %}")
+
+        });
+{#        生物信息#}
+        $("#A_O_S_X_jiao_xue_cheng_guo").click(function () {
+            $("#div_user_info").load("{% url 'polls:index_A_O_SJ_teaching_achievement' 3 %}")
+
+        });
+        $("#A_O_S_X_jing_sai_zhi_dao").click(function () {
+            $("#div_user_info").load("{% url 'polls:index_A_O_SJ_competition_guide' 3 %}")
+
+        });
+        $("#A_O_S_X_jiao_xue_xiang_mu").click(function () {
+            $("#div_user_info").load("{% url 'polls:index_A_O_SJ_teaching_object' 3 %}")
+
+        });
+        $("#A_O_S_X_lun_wen_zhi_dao").click(function () {
+            $("#div_user_info").load("{% url 'polls:index_A_O_SJ_paper_guide' 2 %}")
+
+        });
+        $("#A_O_class_info").click(function () {
+            $("#div_user_info").load("{% url 'polls:index_AO_class_info' %}")
+
+        });
+        $("#A_O_course_info").click(function () {
+            $("#div_user_info").load("{% url 'polls:index_AO_course_info' %}")
+
+        });
+        $("#A_O_class_schedule").click(function () {
+            $("#div_user_info").load("{% url 'polls:index_AO_class_schedul' %}")
+
+        });
+        $("#A_O_workload_coefficent").click(function () {
+            $("#div_user_info").load("{% url 'polls:index_AO_workload_coefficent' %}")
+
+        });
+        $("#A_O_teacher_info").click(function () {
+            $("#div_user_info").load("{% url 'polls:management_of_teacher_resource' 4 %}")
+
+        });
+        $("#A_O_S_J_gong_zuo_liang_zong_lan").click(function () {
+            $("#div_user_info").load("{% url 'polls:workload_count'%}")
+        });
+        $("#A_O_set_page_item_total").click(function () {
+            var href = "{% url 'polls:index_A_O_set_page_item_total' %}";
+            $.get(href, {type:1}, function (retu) {
+                if(retu){
+                    var set_year = prompt("当前每页条数："+retu+"，更改为", "");
+                    if(set_year){
+                        if (!isNaN(set_year) && set_year<51 && set_year>0){
+                            $.get(href, {year:set_year}, function (ret) {
+                                if(ret==1){
+                                    alert("已成功变更每页条数为"+set_year+"条/页!")
+                                }
+                            });
+                        }
+                        else{
+                            alert("每页条目数必须在1-50之间")
+                        }
+                    }else {
+                        alert("输入内容为空,已取消!")
+                    }
+                }
+            });
+        });
+        $("#A_O_set_year").click(function () {
+            var href = "{% url 'polls:index_A_O_set_year' %}";
+            $.get(href, {type:1}, function (retu) {
+                if(retu){
+                    var set_year = prompt("当前年度："+retu+"，更改为", "");
+                    if(set_year){
+                        if (!isNaN(set_year) && set_year<2030 && set_year>2016){
+                            $.get(href, {year:set_year}, function (ret) {
+                                if(ret==1){
+                                    alert("已成功变更时间为"+set_year+"年!")
+                                }
+                            });
+                        }
+                        else{
+                            alert("年份必须在2017和2030之间")
+                        }
+                    }else {
+                        alert("输入内容为空,已取消!")
+                    }
+                }
+            });
+        });
+        $("#A_O_input_time_set").click(function () {
+            $("#form_load").load("{% url 'polls:index_A_O_input_time_set' 1 %}")
+        });
+        $("#A_O_examination_time_set").click(function () {
+            $("#form_load").load("{% url 'polls:index_A_O_input_time_set' 2 %}")
+        });
+    })
+    </script>
+{% endblock %}
+{% block content_left %}
+    <div class="left_unit">
+        <div class="unit_level_top">
+            <div class="unit_title_level1 unit_title" id="workload_input_title">系统设定</div>
+            <div class="unit_title_level" id="workload_input_teaching">
+                <div>
+                    <div class="unit_title_level2" id="A_O_set_year">年度变更</div>
+                </div>
+                <div>
+                    <div class="unit_title_level2" id="A_O_set_page_item_total">每页条数</div>
+                </div>
+                <div>
+                    <div class="unit_title_level2">起止日期</div>
+                    <div class="unit_title_level3">
+                        <div class="unit_detail" id="A_O_input_time_set">教师录入日期
+                            <div class="topLine"></div>
+                            <div class="rightLine"></div>
+                            <div class="bottomLine"></div>
+                            <div class="leftLine"></div>
+                        </div>
+                        <div class="unit_detail" id="A_O_examination_time_set">主任审核日期
+                            <div class="topLine"></div>
+                            <div class="rightLine"></div>
+                            <div class="bottomLine"></div>
+                            <div class="leftLine"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="unit_level_top">
+            <div class="unit_title_level1 unit_title" id="workload_input_title">基础信息管理</div>
+            <div class="unit_title_level" id="workload_input_teaching">
+                <div>
+                    <div class="unit_title_level2" id="A_O_teacher_info">教师信息</div>
+                </div>
+                <div>
+                    <div class="unit_title_level2" id="A_O_class_info">班级信息</div>
+                </div>
+                <div>
+                    <div class="unit_title_level2" id="A_O_course_info">课程信息</div>
+                </div>
+                <div>
+                    <div class="unit_title_level2" id="A_O_class_schedule">课表安排</div>
+                </div>
+                <div>
+                    <div class="unit_title_level2" id="A_O_workload_coefficent">工作量系数</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="unit_level_top">
+            <div class="unit_title_level1 unit_title" id="workload_input_title">工作量管理</div>
+            <div class="unit_title_level" id="workload_input_teaching">
+                <div>
+                    <div class="unit_title_level2">生物技术</div>
+                    <div class="unit_title_level3">
+                        <div class="unit_detail" id="A_O_S_J_jiao_xue_cheng_guo">教学成果
+                            <div class="topLine"></div>
+                            <div class="rightLine"></div>
+                            <div class="bottomLine"></div>
+                            <div class="leftLine"></div>
+                        </div>
+                        <div class="unit_detail" id="A_O_S_J_jiao_xue_xiang_mu">教学项目
+                            <div class="topLine"></div>
+                            <div class="rightLine"></div>
+                            <div class="bottomLine"></div>
+                            <div class="leftLine"></div>
+                        </div>
+                        <div class="unit_detail" id="A_O_S_J_jing_sai_zhi_dao">竞赛指导
+                            <div class="topLine"></div>
+                            <div class="rightLine"></div>
+                            <div class="bottomLine"></div>
+                            <div class="leftLine"></div>
+                        </div>
+                        <div class="unit_detail" id="A_O_S_J_lun_wen_zhi_dao">论文指导
+                            <div class="topLine"></div>
+                            <div class="rightLine"></div>
+                            <div class="bottomLine"></div>
+                            <div class="leftLine"></div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="unit_title_level2">生物工程</div>
+                    <div class="unit_title_level3">
+                        <div class="unit_detail" id="A_O_S_G_jiao_xue_cheng_guo">教学成果
+                            <div class="topLine"></div>
+                            <div class="rightLine"></div>
+                            <div class="bottomLine"></div>
+                            <div class="leftLine"></div>
+                        </div>
+                        <div class="unit_detail" id="A_O_S_G_jiao_xue_xiang_mu">教学项目
+                            <div class="topLine"></div>
+                            <div class="rightLine"></div>
+                            <div class="bottomLine"></div>
+                            <div class="leftLine"></div>
+                        </div>
+                        <div class="unit_detail" id="A_O_S_G_jing_sai_zhi_dao">竞赛指导
+                            <div class="topLine"></div>
+                            <div class="rightLine"></div>
+                            <div class="bottomLine"></div>
+                            <div class="leftLine"></div>
+                        </div>
+                        <div class="unit_detail" id="A_O_S_G_lun_wen_zhi_dao">论文指导
+                            <div class="topLine"></div>
+                            <div class="rightLine"></div>
+                            <div class="bottomLine"></div>
+                            <div class="leftLine"></div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="unit_title_level2">生物信息</div>
+                    <div class="unit_title_level3">
+                        <div class="unit_detail" id="A_O_S_X_jiao_xue_cheng_guo">教学成果
+                            <div class="topLine"></div>
+                            <div class="rightLine"></div>
+                            <div class="bottomLine"></div>
+                            <div class="leftLine"></div>
+                        </div>
+                        <div class="unit_detail" id="A_O_S_X_jiao_xue_xiang_mu">教学项目
+                            <div class="topLine"></div>
+                            <div class="rightLine"></div>
+                            <div class="bottomLine"></div>
+                            <div class="leftLine"></div>
+                        </div>
+                        <div class="unit_detail" id="A_O_S_X_jing_sai_zhi_dao">竞赛指导
+                            <div class="topLine"></div>
+                            <div class="rightLine"></div>
+                            <div class="bottomLine"></div>
+                            <div class="leftLine"></div>
+                        </div>
+                        <div class="unit_detail" id="A_O_S_X_lun_wen_zhi_dao">论文指导
+                            <div class="topLine"></div>
+                            <div class="rightLine"></div>
+                            <div class="bottomLine"></div>
+                            <div class="leftLine"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <div class="unit_title unit_title_level1" id="A_O_S_J_gong_zuo_liang_zong_lan">工作量总览</div>
+        </div>
+    </div>
+
+{% endblock %}
+{% block content_right %}
+<style type="text/css">
+    #loop{
+        text-align: left;
+    }
+</style>
+    <div id="div_user_info">
+    <div id="loop">
+        <h1 class="content_title">注意事项</h1>
+        <p>
+           一、系统设定<br>
+            &nbsp;&nbsp;&nbsp;1、年度变更可改变当前系统年度，教师申报的所有工作量，都会自动加上该年度
+            <br>&nbsp;&nbsp;&nbsp;2、每条页数，可改变查询记录时每页显示的记录数<br>
+            &nbsp;&nbsp;&nbsp;3、起止日期，设置教师录入日期，与主任审核日期<br>
+            <br><br>
+            二、基础信息管理<br>
+            &nbsp;&nbsp;&nbsp;可导入各项基本信息，由于现在尚未获得课程表，故课表暂未导入，其余信息已导入。<br>
+            &nbsp;&nbsp;&nbsp;1、修改密码：修改密码功能可通过修改教师信息实现。可使该教师密码初始化，初始密码为职工号<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;教师信息页面-->修改图标-->重置密码字段，默认为否，勾选“是”-->点击提交。<br><br>
+            &nbsp;&nbsp;&nbsp;2、课表信息：有两种来源：<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;①、由教务员导入，此类记录需教师进行确认。<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;②、由教师申报，此类记录需教务员审核。<br><br>
+            &nbsp;&nbsp;&nbsp;3、工作量系数：理论课系数已按上次要求进行更改，其余系数由于上次所发的图片未具体说明，暂未更改。<br><br>
+            &nbsp;&nbsp;&nbsp;4、课表表单有两种录入样式：<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(1)、手动输入（课表新增功能，应用该样式）,该方法为上次讨论要求实现的样式，但操作较为繁琐<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(2)、下拉框选择(课表修改功能，应用该样式)，该方法较为简便，只需点击，基本没有输入<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(3)、上课地点可以为空<br>
+            <br><br>
+            三、工作量管理中：<br>
+            &nbsp;&nbsp;&nbsp;1、教务员可以查看所有的记录，但只可以审核系主任通过的。<br>
+            &nbsp;&nbsp;&nbsp;2、若教师有上传附件，则可以下载附件。附件暂不限格式。<br>
+            <br><br>
+            四、工作量总览中：<br>
+            &nbsp;&nbsp;&nbsp;1、点击蓝色字，可以查看教师信息及其工作量详细信息<br>
+            &nbsp;&nbsp;&nbsp;1、由于工作量详细信息过多，有些电脑可能显示不全。
+        </p>
+    </div>
+    </div>
+    <div id="form_load">
+
+    </div>
+{% endblock %}

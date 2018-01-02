@@ -1,0 +1,57 @@
+
+.select{
+    height: 50px;
+    /*border:1px solid black;*/
+    display: inline-block;
+}
+.select span{
+    cursor: pointer;
+    position: relative;
+    top: 27px;
+    /*border: 1px solid red;*/
+    padding: 4px 6px;
+    background-color: #c8c8c8;
+    height: 40px;
+}
+.select span:hover{
+    background-color: #e7e7e7 !important;
+    color: #000 !important;
+}
+.search_table{
+    float: right;
+    margin-top: 23px;
+    display: inline-block;
+}
+
+
+.content_right{
+    background-color: #edf2f6;
+}
+
+
+.teacher_info{
+    color: blue;
+    cursor: pointer;
+}
+
+#edge{
+    position: fixed;
+    top: 100px;
+    right: 0;
+    background-color: #bdbdbd;
+    color: #ffffff;
+}
+#form_load{
+    text-align: center;
+}
+
+.queryset_table{
+    margin-left: 80px;
+    margin-right: 0;
+    min-width: 980px;
+}
+.bur{
+    margin-left: 80px;
+    margin-right: 0;
+    min-width: 980px;
+}

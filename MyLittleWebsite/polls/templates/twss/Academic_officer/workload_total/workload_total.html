@@ -1,0 +1,173 @@
+{% load staticfiles %}
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#next_page").click(function (){
+            {% if workload_list.has_next %}
+                    $.post("{% url 'polls:index_workload_count_select' %}",{page:'{{ workload_list.next_page_number }}',type_order:'{{ type_order }}' },function(data){
+                        $("#loop").html(data);
+                    });
+            {% endif %}
+        });
+        $("#search_button").click(function () {
+            $.ajax({
+                type:"POST",
+                data:$("#search_form").serialize(),
+                url:"{% url 'polls:index_workload_count_search' %}",
+                datatype:"json",
+                success: function(data){
+                    $("#loop").html(data);
+                    $("#zonglan").css({height: 30, background:'transparent'});
+                },
+                error: function(data) {
+                    alert(data);
+                }
+            });
+        });
+        $("#zonglan").click(function() {
+            $(this).css({background: 'black', color: 'white'});
+            $("#loop").load("{% url 'polls:index_workload_count_select' %}");
+        });
+        $(".up_arrow").click(function () {
+            alert("up");
+            type_ordered = $(this).attr("alt");
+            $("#loop").load("{% url 'polls:index_workload_count_select' %}",{type_order:type_ordered},function(){
+                alert("成功")
+            });
+        });
+        $(".down_arrow").click(function () {
+            alert("down");
+            type_ordered = $(this).attr("alt");
+            $("#loop").load("{% url 'polls:index_workload_count_select' %}",{type_order:type_ordered},function(){
+                alert("成功")
+            });
+        });
+        $("#index_output_excel").click(function () {
+            $.get("{% url 'polls:excel_chose_view' %}",function(ret){
+                $("#form_load" ).html(ret);
+            });
+        });
+        $(".teacher_workload_info").click(function () {
+            href = $(this).attr("title");
+            send_data = $(this).attr("data-record-id");
+            $.get(href, {confirm_data:'alert', alert_teacher_id:send_data}, function(ret){
+                $("#form_load" ).html(ret);
+            });
+        });
+        $(".teacher_info").click(function () {
+            href = $(this).attr("title");
+            $.get(href,function(ret){
+                $("#form_load" ).html(ret);
+            });
+        });
+    });
+</script>
+<style type="text/css">
+    .teacher_workload_info{
+        color: blue;
+        cursor: pointer;
+    }
+</style>
+<div class="title_top">
+    <h1 class="content_title">工作量总览</h1>
+    <div class="bur">
+        <div class="select">
+        <span class="select_option" id="zonglan">总览</span>
+    </div>
+    <div class="search_table">
+        <form id="search_form">
+        <table>
+            <tr>
+                <td id="search_l">
+                    <label for="search_type">搜索方式</label>
+                    <select name="search_type" id="search_type">
+                        <option value="name">
+                            姓名
+                        </option>
+                        <option value="card">
+                            工号
+                        </option>
+                    </select>
+                </td>
+                <td id="search_c"><input type="text" name="search_text" placeholder="请输入关键字"></td>
+                <td id="search_r"><input id="search_button" type="button" value="搜索"></td>
+            </tr>
+        </table>
+    </form>
+    </div>
+    </div>
+</div>
+<div>
+    <div id="loop">
+        <table class="teacher_table_style">
+        <tr>
+            <th>
+                姓名
+                <img class="up_arrow" src="{% static 'polls/images/up_arrow.png' %}" alt="name_up_arrow">
+                <img class="down_arrow" src="{% static 'polls/images/down_arrow.png' %}" alt="name_down_arrow">
+            </th>
+            <th>
+                工号
+                <img class="up_arrow" src="{% static 'polls/images/up_arrow.png' %}" alt="card_up_arrow">
+                <img class="down_arrow" src="{% static 'polls/images/down_arrow.png' %}" alt="card_down_arrow">
+            </th>
+            <th>
+                系部
+                <img class="up_arrow" src="{% static 'polls/images/up_arrow.png' %}" alt="department_up_arrow">
+                <img class="down_arrow" src="{% static 'polls/images/down_arrow.png' %}" alt="department_down_arrow">
+            </th>
+            <th>
+                教学
+                <img class="up_arrow" src="{% static 'polls/images/up_arrow.png' %}" alt="teaching_up_arrow">
+                <img class="down_arrow" src="{% static 'polls/images/down_arrow.png' %}" alt="teaching_down_arrow">
+            </th>
+            <th>
+                教研
+                <img class="up_arrow" src="{% static 'polls/images/up_arrow.png' %}" alt="searching_up_arrow">
+                <img class="down_arrow" src="{% static 'polls/images/down_arrow.png' %}" alt="searching_down_arrow">
+            </th>
+            <th>
+                汇总
+                <img class="up_arrow" src="{% static 'polls/images/up_arrow.png' %}" alt="total_up_arrow">
+                <img class="down_arrow" src="{% static 'polls/images/down_arrow.png' %}" alt="total_down_arrow">
+            </th>
+        </tr>
+        {% if workload_list %}
+        {% for workload in workload_list %}
+            <tr>
+                <td class="teacher_info" title="{% url 'polls:index_alert_teacher_info' workload.teacher.id %}">
+                    {{ workload.teacher.first_name }}
+                </td>
+                <td>{{ workload.teacher.profile.stuff_card }}</td>
+                <td>{{ workload.teacher.profile.get_department_display }}</td>
+                <td>{{ workload.teaching_workload }}</td>
+                <td>{{ workload.searching_workload }}</td>
+                <td class="teacher_workload_info" title="{% url 'polls:workload_count' %}" data-record-id="{{ workload.teacher.id }}">{{ workload.total }}</td>
+            </tr>
+        {% endfor %}
+        {% else %}
+            <tr>
+                <td colspan="7">{{ erro_message }}</td>
+            </tr>
+        {% endif %}
+                <tr id="paginator">
+                        <td colspan="7">
+                            {% if workload_list.has_previous %}
+                                <a id="previous_page">上一页</a>
+                            {% endif %}
+                            <span class="current">
+                                {{ workload_list.number }}/{{ workload_list.paginator.num_pages }}
+                            </span>
+                            {% if workload_list.has_next %}
+                                <a id="next_page" >下一页</a>
+                            {% endif %}
+                        </td>
+                </tr>
+        </table>
+    </div>
+</div>
+<div id="form_load">
+
+</div>
+<div id="edge">
+    <a id="index_output_excel"> 导出excel</a>
+</div>

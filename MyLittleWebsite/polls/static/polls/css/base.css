@@ -1,0 +1,426 @@
+
+/*分割点*/
+*{
+    padding: 0;
+    margin: 0;
+}
+
+
+body{
+    position: relative;
+    background-color: #27303f;
+    /*border-color: #27303f;*/
+    box-sizing: border-box;
+    font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #333;
+    margin: 0;
+    min-width: 1000px;
+    min-height: 700px;
+    font-weight: 400;
+}
+#top{
+    background-color: #27303f;
+    border-color: #27303f;
+    /*padding: 0 100px;*/
+    margin: 0;
+    color: white;
+    /*background-color: #ad434b;*/
+    /*border-color: #ad434b;*/
+    border-radius: 0;
+    min-width: 1340px;
+    height: 80px;
+}
+#top a{
+    color: white;
+}
+#top_left{
+    float: left;
+    height: 80px;
+    width: 265px;
+    margin-left: 50px;
+}
+#img_index_top_logo{
+    border-radius: 0;
+    margin-top: 15px;
+    height: 64px;
+    width: auto;
+}
+#top_center{
+    float: left;
+    height: auto;
+    width: 216px;
+    padding-top: 30px;
+    /*line-height: 32px;*/
+    font-family: KaiTi;
+    font-size: 20px;
+    font-weight: 500;
+    text-align: left;
+}
+#top_right{
+    float: right;
+    margin-top: 50px;
+}
+#center{
+    position: relative;
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 80px;
+    width: 100%;
+    min-width: 1340px;
+    min-height: 540px;
+    background-color: #ffffff;
+}
+#bottom{
+    position: absolute;
+    bottom: 0;
+    background-color: #27303f;
+    border-color: #27303f;
+    color: #ffffff;
+    margin: 0;
+    border-radius: 0;
+    min-height: 80px;
+    min-width: 1340px;
+    width: 100%;
+}
+#bottom_center{
+    line-height: 30px;
+    text-align: center;
+}
+
+img {
+    border:none;
+}
+
+a{
+    cursor: pointer;
+    color: #363d90;
+    text-decoration: none;
+}
+
+/*选项卡之制作*/
+.content{
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: auto;
+    /*min-width: 900px;*/
+    /*min-height: 740px;*/
+}
+.content_left{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 20%;
+    height: 100%;
+    background-color: #27303f;
+    color: #ffffff;
+}
+.left_unit{
+    position: absolute;
+    right: 0;
+    top: 60px;
+    min-width: 160px;
+    width: 70%;
+    height: 30px;
+    line-height: 30px;
+    text-align: left;
+}
+.unit_title_level1{
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-left: 6px;
+    font-size: 18px;
+    font-weight: 100;
+}
+.unit_level_top{
+    margin-bottom: 10px;
+}
+.unit_title{
+    cursor: pointer;
+    background-color: gray;
+    border: 1px solid gray;
+}
+.unit_title:hover{
+    background-color: #bcbcbc;
+    color: #000;
+    /*background-color: transparent;*/
+    border: 1px solid gray;
+}
+.unit_detail{
+    cursor: pointer;
+    padding-right: 10px;
+    text-align: right;
+    background-color: #121A2C;
+}
+.unit_title_level2{
+    cursor: pointer;
+    padding-left: 10px;
+}
+
+
+.unit_detail{
+     position: relative;
+ }
+.topLine{
+    width: 0;
+    height: 1px;
+    background: #c0c0c0;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.bottomLine{
+    width: 0;
+    height: 1px;
+    background: #c0c0c0;
+    position:absolute;
+    right: 0;
+    bottom: 0;
+}
+.leftLine{
+    width: 1px;
+    height: 0;
+    background: #c0c0c0;
+    position:absolute;
+    left: 0;
+    bottom: 0;
+}
+.rightLine{
+    width: 1px;
+    height: 0;
+    background: #c0c0c0;
+    position:absolute;
+    right: 0;
+    top: 0;
+}
+/*选项卡结束*/
+
+/*页面顶部右下方样式*/
+.content_title{
+    text-align: center;
+}
+.content_right{
+    float: right;
+    width: 80%;
+    height: 100%;
+    background-color: #edf2f6;
+}
+
+#div_user_info{
+    position: relative;
+    padding-bottom: 100px;
+    padding-top: 30px;
+    width: 100%;
+    min-height: 710px;
+}
+
+
+
+input[type="number"] {
+    -moz-appearance:textfield;
+}
+/*个人信息表*/
+.user_info_content_table{
+    border-collapse: collapse;
+    margin: 0 auto;
+}
+
+.user_info_content_table tr{
+    width: 300px;
+    height: 45px;
+    /*line-height: 45px;*/
+}
+
+.user_info_content_table th{
+    width: 150px;
+    font-size: 14px;
+    cursor: default;
+}
+
+.user_info_content_table td{
+    width: 150px;
+    font-size: 14px;
+    text-align: center;
+}
+.user_info_content_table td input, .user_info_content_table td select{
+    width: auto;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    background-color: #fff;
+    color: #555;
+    text-align: center;
+    line-height: 1.42857143;
+}
+.user_info_content_table td input{
+    width: 158px;
+}
+.user_info_content_table td input:focus{
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
+}
+
+.border_top{
+    border-top: 1px solid #dddddd;
+}
+.border_bottom{
+    border-bottom: 1px solid #dddddd;
+}
+
+
+
+.queryset_table{
+    width: 88%;
+    min-width: 800px;
+    margin-left: 122px;
+    margin-right: 50px;
+    /*border-collapse:collapse;*/
+    border-spacing: 0;
+}
+
+.queryset_table th{
+    height: 38px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    /*border-left: 0px;*/
+    /*border-right: 0px;*/
+    font-size: 25px;
+    text-align: center;
+}
+
+.queryset_table td{
+    height: 38px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    font-weight: 100;
+    font-size: 20px;
+    /*background-color: rgba(255,255,255,0.2);*/
+    text-align: center;
+    border-bottom: 1px solid black;
+}
+#index_new_class_schedule:hover{
+    cursor: pointer;
+}
+
+.deleted,.edit,.add{
+    cursor: pointer;
+    width: 28px;
+    height: 28px;
+}
+/*排序上下箭头样式*/
+.up_arrow{
+    position: relative;
+    top: -8.5px;
+    height: 6px;
+    width: 6px;
+    cursor: pointer;
+}
+
+.down_arrow{
+    position: relative;
+    left: -10px;
+    top: 3.5px;
+    height: 6px;
+    width: 6px;
+    cursor: pointer;
+}
+
+
+/*add单元格之样式*/
+.new_teaching_achievement:hover{
+    background-color: rgba(255,255,255,0.4) ;
+    cursor: pointer ;
+}
+
+/*按钮*/
+button{
+    cursor: pointer;
+}
+/*错误原因*/
+.reject_reason{
+    color: blue;
+    cursor: pointer;
+    /*text-decoration: underline;*/
+}
+.bur{
+    width: 88%;
+    /*min-width: 800px;*/
+    margin-left:80px;
+    height: 50px;
+}
+.operater{
+    display: inline-block;
+    width: 100px;
+    margin-top: 24px;
+}
+.button_top{
+    padding: 2px 5px;
+    /*line-height: 1.3333333;*/
+    border-radius: 3px;
+    color: #353535;
+    background-color: #ffffff;
+    border-color: #9f9f9f;
+    text-align: center;
+    cursor: pointer;
+}
+
+/*表单控件*/
+/*input or select*/
+.new_form_contorl{
+    width: 158px;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    color: #555;
+    text-align: center;
+    line-height: 1.42857143;
+}
+.new_form_contorl:focus{
+    box-shadow: 0 0 8px rgba(82,168,236,.6);
+}
+
+
+/*button*/
+.new_button_group{
+    margin-top: 10px;
+    padding: 5px 16px;
+    line-height: 1.3333333;
+    border-radius: 6px;
+    color: #353535;
+    background-color: #cccccc;
+    border-color: #9f9f9f;
+    text-align: center;
+    cursor: pointer;
+}
+
+
+/*与标题之间隔*/
+.content_title_down{
+    margin-top: 30px;
+}
+
+.errorlist{
+    font-size: 10px;
+    color: #ff442c;
+}
+
+
+/*课程表课程信息弹窗*/
+.course_info, .class_info{
+    color: blue;
+    cursor: pointer;
+}
+.course_info:hover, .class_info:hover{
+    color: #000089;
+    text-decoration: underline;
+}
+
+/*搜索区域隐藏输入框*/
+.hidden{
+    display: none;
+}

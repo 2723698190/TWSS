@@ -1,0 +1,201 @@
+{% load staticfiles %}
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        var isCheckAll = false;
+        $("#check_all").click(function () {
+            if (isCheckAll) {
+                $("input[type='checkbox']").each(function() {
+                    this.checked = false;
+                });
+                isCheckAll = false;
+            } else {
+                $("input[type='checkbox']").each(function() {
+                    this.checked = true;
+                });
+                isCheckAll = true;
+            }
+        });
+        $(".up_arrow").click(function () {
+            var search_type = $("#search_type").val();
+            var search_text = $("#search_text").val();
+            var type_ordered = $(this).attr("alt");
+            $("#loop").load("{% url 'polls:index_AO_class_schedul_select' %}",{search_text:search_text,search_type:search_type,type_order:type_ordered},function(){
+                alert("成功")
+            });
+        });
+        $(".down_arrow").click(function () {
+            var search_type = $("#search_type").val();
+            var search_text = $("#search_text").val();
+            var type_ordered = $(this).attr("alt");
+            $("#loop").load("{% url 'polls:index_AO_class_schedul_select' %}",{search_text:search_text,search_type:search_type,type_order:type_ordered},function(){
+                alert("成功")
+            });
+        });
+        $("#next_page").click(function (){
+            var search_type = $("#search_type").val();
+            var search_text = $("#search_text").val();
+            {% if class_schedul_list.has_next %}
+                $.post("{% url 'polls:index_AO_class_schedul_select' %}",{search_text:search_text,search_type:search_type,page:'{{ class_schedul_list.next_page_number }}',type:'{{ type }}',type_order:'{{ type_order }}' },function(data){
+                    $("#loop").html(data);
+                });
+            {% endif %}
+        });
+        $("#previous_page").click(function () {
+            var search_type = $("#search_type").val();
+            var search_text = $("#search_text").val();
+            {% if class_schedul_list.has_previous %}
+                $.post("{% url 'polls:index_AO_class_schedul_select' %}",{search_text:search_text,search_type:search_type,page:'{{ class_schedul_list.previous_page_number }}',type:'{{ type }}',type_order:'{{ type_order }}' },function(data){
+                    $("#loop").html(data);
+                });
+            {% endif %}
+        });
+        $(".edit").on("click",function () {
+            href = $(this).attr("alt");
+            $.get(href, {page:'{{ class_schedul_list.number }}',type_order:'{{ type_order }}'}, function(ret){
+                $("#form_load" ).html(ret);
+            });
+        });
+        $(".deleted").on("click",function () {
+            if(confirm("确认删除该课表记录？")){
+                href = $(this).attr("alt");
+                $.get(href,function () {
+                    $.post("{% url 'polls:index_AO_class_schedul_select' %}",{page:'{{ class_schedul_list.number }}',type:'{{ type }}',type_order:'{{ type_order }}' },function(data){
+                                $("#loop").html(data);
+                    });
+                });
+            }else{
+                alert("已取消！")
+            }
+        });
+        $(".add").click(function () {
+            $.get("{% url 'polls:index_AO_class_schedul_add' %}", function(ret){
+               $("#form_load" ).html(ret);
+            });
+        });
+        $(".reject_reason").click(function () {
+            href = $(this).attr("title");
+            $.get(href,function(ret){
+                $("#form_load" ).html(ret);
+            });
+        });
+        $(".teacher_info").click(function () {
+            href = $(this).attr("title");
+            $.get(href,function(ret){
+                $("#form_load" ).html(ret);
+            });
+        });
+        $(".class_info").click(function () {
+            href = $(this).attr("title");
+            $.get(href,function(ret){
+                $("#form_load" ).html(ret);
+            });
+        });
+        $(".course_info").click(function () {
+            href = $(this).attr("title");
+            $.get(href,function(ret){
+                $("#form_load" ).html(ret);
+            });
+        });
+    });
+</script>
+
+        <table class="teacher_table_style">
+<tr>
+    <th><input type="checkbox" id="check_all"></th>
+    <th>
+        年度
+        <img class="up_arrow" src="{% static 'polls/images/up_arrow.png' %}" alt="year_up_arrow">
+        <img class="down_arrow" src="{% static 'polls/images/down_arrow.png' %}" alt="year_down_arrow">
+    </th>
+    <th>
+        学期
+        <img class="up_arrow" src="{% static 'polls/images/up_arrow.png' %}" alt="term_up_arrow">
+        <img class="down_arrow" src="{% static 'polls/images/down_arrow.png' %}" alt="term_down_arrow">
+
+    </th>
+    <th>
+        教师
+        <img class="up_arrow" src="{% static 'polls/images/up_arrow.png' %}" alt="teacher_up_arrow">
+        <img class="down_arrow" src="{% static 'polls/images/down_arrow.png' %}" alt="teacher_down_arrow">
+
+    </th>
+    <th>
+        课程
+        <img class="up_arrow" src="{% static 'polls/images/up_arrow.png' %}" alt="course_up_arrow">
+        <img class="down_arrow" src="{% static 'polls/images/down_arrow.png' %}" alt="course_down_arrow">
+    </th>
+    <th>
+        班级
+        <img class="up_arrow" src="{% static 'polls/images/up_arrow.png' %}" alt="class_up_arrow">
+        <img class="down_arrow" src="{% static 'polls/images/down_arrow.png' %}" alt="class_down_arrow">
+
+    </th>
+    <th>工作量</th>
+    <th>
+        状态
+        <img class="up_arrow" src="{% static 'polls/images/up_arrow.png' %}" alt="course_up_arrow">
+        <img class="down_arrow" src="{% static 'polls/images/down_arrow.png' %}" alt="course_down_arrow">
+    </th>
+    <th>操作</th>
+</tr>
+        {% if class_schedul_list %}
+        {% for class_schedul in class_schedul_list %}
+            <tr>
+                <td><input type="checkbox" name="test" value="{{ class_schedul.id }}"></td>
+                <td>{{ class_schedul.year }}</td>
+                <td>{{ class_schedul.get_term_display }}</td>
+                <td class="teacher_info" title="{% url 'polls:index_alert_teacher_info' class_schedul.teacher_id.id %}">
+                    {{ class_schedul.teacher_id.user.first_name }}
+                </td>
+                <td class="course_info" title="{% url 'polls:index_alert_course_info' class_schedul.course_id.Course_card %}">
+                    {{ class_schedul.course_id.course_name }}
+                </td>
+                <td class="class_info" title="{% url 'polls:index_alert_class_info' class_schedul.class_id.class_card %}">{{ class_schedul.class_id.class_name }}</td>
+                <td>{{ class_schedul.workload }}</td>
+                {% if class_schedul.state < 3 %}
+                    <td>{{ class_schedul.get_state_display }}</td>
+                {% else %}
+                    <td class="reject_reason" title="{% url 'polls:index_alert_class_reject_reason' class_schedul.id %}">{{ class_schedul.get_state_display }}</td>
+                {% endif %}
+                <td>
+                    <a>
+                        <img class="deleted" src="{% static 'polls/images/delete.png' %}" alt="{% url 'polls:index_AO_class_schedul_delete' class_schedul.id %}">
+                    </a>
+                    <a>
+                        <img class="edit" src="{% static 'polls/images/editer.png' %}" alt="{% url 'polls:index_AO_class_schedul_edit' class_schedul.id %}">
+                    </a>
+                    <a>
+                        <img class="add" src="{% static 'polls/images/arrows_square_plus.png' %}">
+                    </a>
+                </td>
+            </tr>
+        {% endfor %}
+        {% else %}
+            <tr>
+                <td colspan="9">
+                    <a>
+                        <img class="add" src="{% static 'polls/images/arrows_square_plus.png' %}">
+                    </a>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="9"><span>未找到记录</span></td>
+            </tr>
+        {% endif %}
+        {% if class_schedul_list.has_other_pages %}
+                <tr id="paginator">
+                        <td colspan="9">
+                            {% if class_schedul_list.has_previous %}
+                                <a id="previous_page">上一页</a>
+                            {% endif %}
+                            <span class="current">
+                                {{ class_schedul_list.number }}/{{ class_schedul_list.paginator.num_pages }}
+                            </span>
+                            {% if class_schedul_list.has_next %}
+                                <a id="next_page" >下一页</a>
+                            {% endif %}
+                        </td>
+                </tr>
+        {% endif %}
+        </table>

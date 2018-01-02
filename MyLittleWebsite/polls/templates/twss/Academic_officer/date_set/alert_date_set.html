@@ -1,0 +1,85 @@
+{% load staticfiles %}
+<script src="{% static 'polls/js/alert_form_cancle.js' %}"></script>
+<link rel="stylesheet" href="{% static 'polls/css/academic_officer_alert.css' %}"/>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        function allow() {
+            $.ajax({
+                type:"POST",
+                data:$("#submit_form").serialize(),
+                url:"{% url 'polls:index_A_O_input_time_set' item_date.id %}",
+                datatype:"json",
+                success: function(data){
+                    if(data==="1"){
+                         $("#form").animate({top:'-400px'},function () {
+                            $("#form_load").html(" ");
+                            alert("教师录入起止日期设置成功！");
+                        });
+                    }else{
+                        $("#form").animate({top:'-400px'},function () {
+                            $("#form_load").html(data);
+                        });
+                    }
+                },
+                error: function(data) {
+                    alert(data);
+                }
+            });
+        }
+        $("#add_submit").click(function () {
+            if($("#id_start_time_year").val()<$("#id_end_time_year").val()){
+                //alert("允许！");
+                allow()
+            }else if ($("#id_start_time_year").val()>$("#id_end_time_year").val()){
+                alert("禁止！起始日期不能小于截止日期");
+            }else {
+                if($("#id_start_time_month").val()>$("#id_end_time_month").val()){
+                    alert("禁止！起始日期不能小于截止日期");
+                }else if($("#id_start_time_month").val()<$("#id_end_time_month").val()){
+                   // alert("允许！");
+                    allow()
+                }else{
+                    if($("#id_start_time_day").val()>$("#id_end_time_day").val()){
+                        alert("禁止！起始日期不能小于截止日期");
+                    }else if($("#id_start_time_day").val()<$("#id_end_time_day").val()){
+                       // alert("允许");
+                        allow()
+                    }else {
+                        alert("禁止！起始日期不能等于于截止日期")
+                    }
+                }
+            }
+
+
+        });
+    });
+</script>
+
+<div id="form">
+    <h2 id="new_index_title">{{ item_date.name }}</h2>
+    {% if item_date.start_time %}
+        <div id="index_title_down">当前起始时间：{{ item_date.start_time|date:"Y-m-d" }}   当前截止时间：{{ item_date.end_time|date:"Y-m-d" }}</div>
+    {% else %}
+        <div>当前起止日期尚未设置</div>
+    {% endif %}
+    <form id="submit_form" method="post">
+        {% csrf_token %}
+        <p class="form-control">
+            {{ new_form.start_time.errors }}
+            {{ new_form.start_time.label_tag }}
+            {{ new_form.start_time }}
+        </p>
+        <p class="form-control">
+            {{ new_form.end_time.errors }}
+            {{ new_form.end_time.label_tag }}
+            {{ new_form.end_time }}
+        </p>
+    </form>
+    <input class="button-group" id="add_submit" type="button" value="提交">
+    <a class="close-reveal-modal cancel_new_index_teacher">×</a>
+    <input class="cancel_new_index_teacher button-group" type="button" value="取消">
+</div>
+
+<div id="cover">
+</div>

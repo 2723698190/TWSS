@@ -1,0 +1,72 @@
+{% extends 'twss/baseB.html' %}
+{% load staticfiles %}
+
+{% block headmeta1 %}
+    <link rel="stylesheet" href={% static "polls/css/academic_officer.css" %}>
+    <script type="text/javascript">
+    $(document).ready(function(){
+        {#        生物信息#}
+        $("#A_O_S_X_jiao_xue_cheng_guo").click(function () {
+            $("#div_user_info").load("{% url 'polls:index_A_O_SJ_teaching_achievement' 3 %}")
+
+        });
+        $("#A_O_S_X_jing_sai_zhi_dao").click(function () {
+            $("#div_user_info").load("{% url 'polls:index_A_O_SJ_competition_guide' 3 %}")
+
+        });
+        $("#A_O_S_X_jiao_xue_xiang_mu").click(function () {
+            $("#div_user_info").load("{% url 'polls:index_A_O_SJ_teaching_object' 3 %}")
+
+        });
+        $("#A_O_S_X_lun_wen_zhi_dao").click(function () {
+            $("#div_user_info").load("{% url 'polls:index_A_O_SJ_paper_guide' 2 %}")
+
+        });
+        $("#shi_zi_guan_li").click(function () {
+            $("#div_user_info").load("{% url 'polls:management_of_teacher_resource' 2 %}")
+
+        });
+        $("#A_O_S_J_gong_zuo_liang_zong_lan").click(function () {
+            $("#div_user_info").load("{% url 'polls:workload_count'%}")
+
+        });
+    });
+
+    </script>
+{% endblock %}
+
+{% block content_left %}
+
+        <div class="left_unit">
+        <div class="unit_level_top">
+            <div class="unit_title unit_title_level1" id="shi_zi_guan_li">师资管理</div>
+        </div>
+
+        <div class="unit_level_top">
+            <div class="unit_title_level1 unit_title" id="workload_input_title">工作量审核</div>
+            <div class="unit_title_level" id="workload_input_teaching">
+                <div>
+                    <div class="unit_title_level2" id="A_O_S_X_jiao_xue_cheng_guo">教学成果</div>
+                </div>
+                <div>
+                    <div class="unit_title_level2" id="A_O_S_X_jiao_xue_xiang_mu">教学工程</div>
+                </div>
+                <div>
+                    <div class="unit_title_level2" id="A_O_S_X_jing_sai_zhi_dao">竞赛指导</div>
+                </div>
+                <div>
+                    <div class="unit_title_level2" id="A_O_S_X_lun_wen_zhi_dao">论文指导</div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="unit_title unit_title_level1" id="A_O_S_J_gong_zuo_liang_zong_lan">工作量总览</div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content_right %}
+    <div id="div_user_info">
+    请加载内容
+    </div>
+{% endblock %}

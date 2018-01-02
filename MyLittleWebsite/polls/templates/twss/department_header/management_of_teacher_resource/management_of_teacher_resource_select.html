@@ -1,0 +1,144 @@
+{% load staticfiles %}
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(".up_arrow").click(function () {
+            var type_ordered = $(this).attr("alt");
+            $("#loop").load("{% url 'polls:management_of_teacher_resource_select' %}",{type_order:type_ordered},function(){
+                alert("成功")
+            });
+        });
+        $(".down_arrow").click(function () {
+            var type_ordered = $(this).attr("alt");
+            $("#loop").load("{% url 'polls:management_of_teacher_resource_select' %}",{type_order:type_ordered},function(){
+                alert("成功")
+            });
+        });
+        $("#next_page").click(function (){
+            {% if teacher_list.has_next %}
+                {% if type_order %}
+                    $.post("{% url 'polls:management_of_teacher_resource_select'%}",{page:'{{ teacher_list.next_page_number }}',type_order:'{{ type_order }}',department:'{{ department }}' },function(data){
+                        $("#loop").html(data);
+                    });
+                {% else %}
+                    $.post("{% url 'polls:management_of_teacher_resource_select'%}",{page:'{{ teacher_list.next_page_number }}',department:'{{ department }}' },function(data){
+                        $("#loop").html(data);
+                    });
+                {% endif %}
+            {% endif %}
+        });
+        $("#previous_page").click(function (){
+            {% if teacher_list.has_previous %}
+                {% if type_order %}
+                    $.post("{% url 'polls:management_of_teacher_resource_select' %}",{page:'{{ teacher_list.previous_page_number }}',type_order:'{{ type_order }}',department:'{{ department }}' },function(data){
+                        $("#loop").html(data);
+                    });
+                {% else %}
+                    $.post("{% url 'polls:management_of_teacher_resource_select' %}",{page:'{{ teacher_list.previous_page_number }}',department:'{{ department }}' },function(data){
+                        $("#loop").html(data);
+                    });
+                {% endif %}
+            {% endif %}
+        });
+        $(".add").click(function () {
+            $.get("{% url 'polls:index_register' 2 %}",{department:'{{ department }}'}, function(ret){
+               $("#form_load" ).html(ret);
+            });
+        });
+        $(".edit").on("click",function () {
+            href = $(this).attr("alt");
+            $.get(href, {page:'{{ teacher_list.number }}',type_order:'{{ type_order }}'}, function(ret){
+                $("#form_load" ).html(ret);
+            });
+        });
+        $(".deleted").on("click",function () {
+            if(confirm("确定注销该用户么？")){
+                href = $(this).attr("alt");
+                $.get(href,function(ret){
+                    alert(ret);
+                    $.post("{% url 'polls:management_of_teacher_resource_select' %}",{page:'{{ teacher_list.number }}',department:'{{ department }}'},function(data){
+                        $("#loop").html(data);
+                    });
+                });
+            }else {
+                alert("已取消!")
+            }
+        });
+    })
+</script>
+<table class="teacher_table_style">
+        <tr>
+            <th>
+                教职工号
+                <img class="up_arrow" src="{% static 'polls/images/up_arrow.png' %}" alt="card_up_arrow">
+                <img class="down_arrow" src="{% static 'polls/images/down_arrow.png' %}" alt="card_down_arrow">
+
+            </th>
+            <th>
+                姓名
+                <img class="up_arrow" src="{% static 'polls/images/up_arrow.png' %}" alt="name_up_arrow">
+                <img class="down_arrow" src="{% static 'polls/images/down_arrow.png' %}" alt="name_down_arrow">
+
+            </th>
+            <th>
+                职称
+                <img class="up_arrow" src="{% static 'polls/images/up_arrow.png' %}" alt="title_up_arrow">
+                <img class="down_arrow" src="{% static 'polls/images/down_arrow.png' %}" alt="title_down_arrow">
+
+            </th>
+            <th>
+                权限
+                <img class="up_arrow" src="{% static 'polls/images/up_arrow.png' %}" alt="authority_up_arrow">
+                <img class="down_arrow" src="{% static 'polls/images/down_arrow.png' %}" alt="authority_down_arrow">
+
+            </th>
+            <th>
+                系部
+                <img class="up_arrow" src="{% static 'polls/images/up_arrow.png' %}" alt="department_up_arrow">
+                <img class="down_arrow" src="{% static 'polls/images/down_arrow.png' %}" alt="department_down_arrow">
+
+            </th>
+            <th>操作</th>
+        </tr>
+        {% if teacher_list %}
+        {% for teacher in teacher_list %}
+            <tr>
+                <td>{{ teacher.profile.stuff_card }}</td>
+                <td>{{ teacher.get_full_name }}</td>
+                <td>{{ teacher.profile.get_title_display }}</td>
+                <td>{{ teacher.profile.get_authority_display }}</td>
+                <td>{{ teacher.profile.get_department_display }}</td>
+
+                <td>
+                    <a>
+                        <img class="deleted" src="{% static 'polls/images/delete.png' %}" alt="{% url 'polls:MOTRS_teacher_info_delete' teacher.id %}">
+                    </a>
+                    <a>
+                        <img class="edit" src="{% static 'polls/images/editer.png' %}" alt="{% url 'polls:MOTRS_teacher_info_edit' teacher.id %}" >
+                    </a>
+                    <a>
+                        <img class="add" src="{% static 'polls/images/arrows_square_plus.png' %}">
+                    </a>
+                </td>
+            </tr>
+        {% endfor %}
+        {% else %}
+            <tr>
+                <td colspan="7">{{ erro_message }}</td>
+            </tr>
+        {% endif %}
+        {% if teacher_list.has_other_pages %}
+             <tr>
+                <td colspan="7">
+                    {% if teacher_list.has_previous %}
+                        <a id="previous_page">上一页</a>
+                    {% endif %}
+                    <span class="current">
+                        {{ teacher_list.number }}/{{ teacher_list.paginator.num_pages }}
+                    </span>
+                    {% if teacher_list.has_next %}
+                        <a id="next_page" >下一页</a>
+                    {% endif %}
+                </td>
+            </tr>
+        {% endif %}
+        </table>

@@ -1,0 +1,78 @@
+{% load staticfiles %}
+<script src="{% static 'polls/js/alert_form_cancle.js' %}"></script>
+<link rel="stylesheet" href="{% static 'polls/css/academic_officer_alert.css' %}"/>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#edit_submit").click(function () {
+            url = $("#edit_submit").attr("alt");
+            $.ajax({
+                    type:"POST",
+                    data:$("#form_target").serialize(),
+                    url: url,
+                    datatype:"json",
+                    success: function(type){
+                        if (type==1){
+                            $("#form_load").html(" ");
+                            $("#zhuanye_tuandui_shiyan").css({height: 40, bottom: -6, background:'rgb(183, 183, 183)', color: '#FFFFFF'}).siblings().css({height:30,bottom:-16,'background-color':'#FFFFFF',color:'black'});
+                            $("#index_new_z_t_s_lei" ).show().siblings().hide();
+                            $("#loop").load(
+                                "{% url 'polls:index_teacher_teaching_object_select' %}",{'type':type}
+                                );
+                        }
+                        else if (type==2){
+                            $("#form_load").html(" ");
+                            $("#ke_cheng_lei").css({height: 40, bottom: -6, background:'rgb(183, 183, 183)', color: '#FFFFFF'}).siblings().css({height:30,bottom:-16,'background-color':'#FFFFFF',color:'black'});
+                            $("#index_new_ke_cheng_lei" ).show().siblings().hide();
+                            $("#loop").load("{% url 'polls:index_teacher_teaching_object_select' %}",{'type':type});
+                        }
+                        else if(type==3){
+                            $("#form_load").html(" ");
+                            $("#gong_cheng_shi_jian").css({height: 40, bottom: -6, background:'rgb(183, 183, 183)', color: '#FFFFFF'}).siblings().css({height:30,bottom:-16,'background-color':'#FFFFFF',color:'black'});
+                            $("#index_new_gong_cheng_shi_jian" ).show().siblings().hide();
+                            $("#loop").load("{% url 'polls:index_teacher_teaching_object_select' %}",{'type':type});
+                        }
+                        else if(type==4){
+                            $("#form_load").html(" ");
+                            $("#jiao_xue_ming_shi").css({height: 40, bottom: -6, background:'rgb(183, 183, 183)', color: '#FFFFFF'}).siblings().css({height:30,bottom:-16,'background-color':'#FFFFFF',color:'black'});
+                            $("#index_new_jiao_xue_ming_shi" ).show().siblings().hide();
+                            $("#loop").load("{% url 'polls:index_teacher_teaching_object_select' %}",{'type':type});
+                        }
+                        else if(type==5){
+                            $("#form_load").html(" ");
+                            $("#da_chuan_xin_chuang_ye").css({height: 40, bottom: -6, background:'rgb(183, 183, 183)', color: '#FFFFFF'}).siblings().css({height:30,bottom:-16,'background-color':'#FFFFFF',color:'black'});
+                            $("#index_new_da_chuang_xin_chuang_ye" ).show().siblings().hide();
+                            $("#loop").load("{% url 'polls:index_teacher_teaching_object_select' %}",{'type':type});
+                        }
+                        else {
+                            $("#form_load").html(type);
+                        }
+                    },
+                    error: function() {
+                        alert("false");
+                    }
+                });
+
+        });
+    });
+</script>
+<div id="form">
+    <h2 id="new_index_title">{{ type }}</h2>
+    {% if index_new_teaching_object_form %}
+        <form method="post" id="form_target">
+            {% csrf_token %}
+            <input type="hidden" name="record_id" value="{{ object_id }}">
+            <table>
+                {{ index_new_teaching_object_form.as_table }}
+            </table>
+            <a class="close-reveal-modal cancel_new_index_teacher">×</a>
+            <input class="button-group" id="edit_submit" type="button" value="提交" alt="{% url 'polls:index_teacher_teaching_object_edit' object_id %}">
+            <input class="cancel_new_index_teacher button-group" type="button" value="取消">
+        </form>
+    {% else %}
+        <p>未找到表单</p>
+    {% endif %}
+</div>
+<div id="cover">
+
+</div>

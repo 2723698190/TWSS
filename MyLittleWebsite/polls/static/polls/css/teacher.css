@@ -1,0 +1,90 @@
+
+/*教学成果*/
+
+
+.queryset_table{
+    margin-left: 80px;
+    margin-right: 0;
+    min-width: 980px;
+}
+.select{
+    margin-left: 80px;
+    margin-right: 0;
+    min-width: 980px;
+    height: 50px;
+}
+
+/*.select{*/
+    /*height: 50px;*/
+    /*min-width: 800px;*/
+    /*margin-left: 122px;*/
+/*}*/
+.select div{
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    bottom: -16px;
+    border:1px solid rgba(183, 183, 183, 0.87);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    margin: 0 0 0;
+    padding: 0 10px 0;
+    padding-top: 4px;
+    background-color: #ffffff;
+    height: 30px;
+    /*font-size: 20px;*/
+}
+.select div:hover{
+    background: rgb(183, 183, 183) !important;
+}
+#zonglan{
+    height: 40px;
+    bottom: -6px;
+    background-color: rgb(183, 183, 183);
+    color: white;
+}
+#zhi_dao_ben_ke_xue_shu_lun_wen{
+    height: 40px;
+    bottom: -6px;
+    background-color: rgb(183, 183, 183);
+    color: white;
+}
+.selecting{
+    height: 30px;
+    bottom: -7px;
+}
+.deleted, .add, .edit{
+    width: 14px;
+    height: 14px;
+}
+
+/*教师查询表格*/
+#loop{
+    /*margin-top: 5px;*/
+    margin-left: 80px;
+    padding: 15px 15px 15px;
+    width: 85%;
+    color: #000000;
+    box-shadow: 0 0 8px rgba(0,0,0,.4);
+    text-align: center;
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.teacher_table_style{
+    margin: 0 auto;
+    width: 100%;
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+.teacher_table_style tr td{
+    text-align: center;
+    border-bottom: 1px solid #efefef;
+}
+.teacher_table_style tr td, .teacher_table_style tr th{
+    padding: 3px;
+}
+.teacher_table_style tr:hover{
+    background-color: #f3f3f3;
+}

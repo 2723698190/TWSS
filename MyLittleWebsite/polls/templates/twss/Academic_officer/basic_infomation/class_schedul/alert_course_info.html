@@ -1,0 +1,40 @@
+{% load staticfiles %}
+<script src="{% static 'polls/js/alert_form_cancle.js' %}"></script>
+<link rel="stylesheet" href="{% static 'polls/css/academic_officer_alert.css' %}"/>
+
+<div id="form">
+    <h2 id="new_index_title">课表管理</h2>
+    {% if course %}
+        <form method="post" id="form_target">
+            {% csrf_token %}
+            <table>
+                <tr>
+                    <th>课程编号</th>
+                    <td>{{ course.Course_card }}</td>
+                </tr>
+                <tr>
+                    <th>课程名</th>
+                    <td>{{ course.course_name }}</td>
+                </tr>
+                <tr>
+                    <th>课程类型</th>
+                    <td>{{ course.get_course_property_display }}</td>
+                </tr>
+                {% if course.course_property > 4 and course.course_property < 8 %}
+                    <th>实习天数</th>
+                    <td>{{ course.days }}</td>
+                {% else %}
+                    <th>学时</th>
+                    <td>{{ course.hours }}</td>
+                {% endif %}
+            </table>
+            <a class="close-reveal-modal cancel_new_index_teacher">×</a>
+            <input class="cancel_new_index_teacher button-group" type="button" value="确定">
+        </form>
+    {% else %}
+        <p>无法找到该课程</p>
+    {% endif %}
+</div>
+<div id="cover">
+
+</div>

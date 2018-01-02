@@ -1,0 +1,59 @@
+{% load staticfiles %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8" http-equiv="Content-Type" content="text/html">
+    <title>生命科学学院教师工作量统计系统</title>
+    <link rel="stylesheet" href={% static "polls/css/base.css" %}>
+    <script src={% static "polls/js/jquery-2.1.1.min.js" %}></script>
+    <script src={% static "polls/js/main.js" %}></script>
+    {% block headmeta %}
+    {% endblock %}
+    {% block headmeta1 %}
+    {% endblock %}
+</head>
+<body>
+    <div id="top">
+        <div id="top_left">
+            <a class="nav_brand" href="http://www.zzu.edu.cn/">
+                <img id="img_index_top_logo" src="{% static 'polls/images/zzu_log_top.png' %}" alt="郑州大学">
+            </a>
+        </div>
+        <div id="top_center">
+            <span>生命科学学院</span>
+            <br>
+            <span>教师工作量统计系统</span>
+        </div>
+        <div id="top_right">
+            <span><a id="user_index_info">个人信息</a> | <a id="changing_password">修改密码</a> | <a href="{% url 'polls:index_logout' %}">退出系统</a> </span>
+        </div>
+    </div>
+    <div id="center">
+        <div class="content">
+            <div class="content_left">
+                <!--标题-->
+                {% block content_left %}
+
+                {% endblock %}
+            </div>
+
+            <div class="content_right">
+                <!--这里根据点击不同标题展现不同内容-->
+                {% block content_right %}
+
+                {% endblock %}
+            </div>
+        </div>
+    </div>
+    <div id="bottom">
+        <div id="bottom_center">
+            郑州大学-生命科学学院2017-2020
+            <br>
+            联系邮箱: zzucxuan215@163.com
+        </div>
+    </div>
+</body>
+{% block base_footer %}
+
+{% endblock %}
+</html>

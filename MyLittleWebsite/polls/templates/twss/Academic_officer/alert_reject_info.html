@@ -1,0 +1,99 @@
+{% load staticfiles %}
+<script src="{% static 'polls/js/alert_form_cancle.js' %}"></script>
+<link rel="stylesheet" href="{% static 'polls/css/academic_officer_alert.css' %}"/>
+{% if reject_reason_form %}
+<script type="text/javascript">
+    {% if  type == '1' %}
+        var href_reject = "{% url 'polls:A_O_SJ_teaching_achievement_reject' department_id %}";
+        var href_select = "{% url 'polls:index_A_O_SJ_teaching_achievement_select' department_id %}";
+    {% elif type == '2' %}
+        var href_reject = "{% url 'polls:index_A_O_SJ_teaching_object_reject' department_id %}";
+        var href_select = "{% url 'polls:index_A_O_SJ_teaching_object_select' department_id %}";
+    {% elif type == '3' %}
+        var href_reject = "{% url 'polls:index_A_O_SJ_competition_guide_reject' department_id %}";
+        var href_select = "{% url 'polls:index_A_O_SJ_competition_guide_select' department_id %}";
+    {% elif type == '4' %}
+        var href_reject = "{% url 'polls:index_A_O_SJ_paper_guide_reject' department_id %}";
+        var href_select = "{% url 'polls:index_A_O_SJ_paper_guide_select' department_id %}";
+    {% elif type == '5' %}
+        var href_reject = "{% url 'polls:index_AO_class_schedul_reject' %}";
+        var href_select = "{% url 'polls:index_AO_class_schedul_select' %}";
+    {% endif %}
+    $("#submit").click(function () {
+        $.ajax({
+            type:"POST",
+            data:$("#form_submit").serialize(),
+            url:href_reject,
+            datatype:"json",
+            success: function(data){
+                if(data==='1'){
+                    alert("未在审核时间内，该功能暂禁用")
+                }else if(data==='2'){
+                    alert("该记录不存在")
+                }else if(data==='3'){
+                    alert("该记录不需驳回")
+                }else if(data==='4'){
+                    alert("出现异常")
+                }else if(data==='0'){
+{#                    成功#}
+                    $("#form").animate({top:'-400px'},function () {
+                        $("#loop").load(
+                        href_select,function(){
+                            $("#form_load").html(" ");
+                        });
+                    });
+                }else {
+                    $("#form").animate({top:'-400px'},function () {
+                        $("#form_load").html(data);
+                    });
+                }
+            },
+            error: function(data) {
+                alert(data);
+            }
+        });
+    });
+
+</script>
+{% endif %}
+<style type="text/css">
+    #reason{
+        min-height: 80px;
+{#        width: 500px;#}
+    }
+    #new_index_title{
+        margin-bottom: 20px;
+    }
+    #reason textarea{
+        width: 500px;
+        min-height: 60px;
+        border: 1px solid #ccc;
+    }
+    #reason textarea:focus{
+        box-shadow: 0 0 8px rgba(82,168,236,.6);
+    }
+</style>
+<div id="form">
+    <div id="new_index_title"><h1>拒绝原因</h1></div>
+    {% if item %}
+        <div id="reason"><p>{{ item.rejectReason }}</p></div>
+        <input class="button-group cancel_new_index_teacher" type="button" value="确认">
+    {% elif reject_reason_form %}
+        <div id="reason">
+        <form id="form_submit" method="post">
+            {% csrf_token %}
+            <p>{{ reject_reason_form.non_field_errors }}</p>
+            <p>{{ reject_reason_form.reject_reason.errors }}</p>
+            <p>{{ reject_reason_form.reject_reason }}</p>
+            <input type="hidden" name="test" value="{{ query.id }}">
+            <input class="button-group" id="submit" type="button" value="提交">
+            <input class="button-group cancel_new_index_teacher" type="button" value="取消">
+        </form>
+        </div>
+    {% else %}
+        <p>拒绝原因未填写</p>
+    {% endif %}
+    <a class="close-reveal-modal cancel_new_index_teacher">×</a>
+
+</div>
+<div id="cover"></div>

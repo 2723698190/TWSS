@@ -1,0 +1,77 @@
+{% load staticfiles %}
+<script src="{% static 'polls/js/alert_form_cancle.js' %}"></script>
+<link rel="stylesheet" href="{% static 'polls/css/academic_officer_alert.css' %}"/>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#add_submit").click(function () {
+            {% if edit %}
+                var url_submit="{% url 'polls:index_teacher_edit_class_schedule' class_schedule_id %}";
+            {% else %}
+                var url_submit="{% url 'polls:index_teacher_new_class_schedule' %}";
+            {% endif %}
+            $.ajax({
+                type:"POST",
+                data:$("#form_target").serialize(),
+                url:url_submit,
+                datatype:"json",
+                success: function(data){
+                    if(data==="1"){
+                        $("#form").animate({top:'-400px'},function () {
+                            $("#form_load").html(" ");
+                            $.post("{% url 'polls:index_teacher_class_select' type %}",function(ret){
+                                $("#loop").html(ret);
+                            });
+                        });
+                    }else {
+                        $("#form").animate({top:'-400px'},function () {
+                            $("#form_load").html(data);
+                        });
+                    }
+                },
+                error: function(data) {
+                    alert(data);
+                }
+            });
+        });
+    });
+</script>
+
+<div id="form">
+    <h2 id="new_index_title">课表管理</h2>
+    {% if index_new_class_schedule_form %}
+        <form method="post" id="form_target">
+            {% csrf_token %}
+            <p>
+                {{ index_new_class_schedule_form.non_field_errors }}
+            </p>
+            <table>
+                <tr>
+                    <th>学期</th>
+                    <td>{{ index_new_class_schedule_form.term.errors }}{{ index_new_class_schedule_form.term }}</td>
+                </tr>
+                <tr>
+                    <th>课程</th>
+                    <td>{{ index_new_class_schedule_form.course_id.errors }}{{ index_new_class_schedule_form.course_id }}</td>
+                </tr>
+                <tr>
+                    <th>地点</th>
+                    <td>{{ index_new_class_schedule_form.place.errors }}{{ index_new_class_schedule_form.place }}</td>
+                </tr>
+                <tr>
+                    <th>班级</th>
+                    <td>{{ index_new_class_schedule_form.class_id.errors }}{{ index_new_class_schedule_form.class_id }}</td>
+                </tr>
+            </table>
+            <input type="hidden" name="type" value="{{ type }}">
+            <input class="button-group" id="add_submit" type="button" value="提交">
+            <a class="close-reveal-modal cancel_new_index_teacher">×</a>
+            <input class="cancel_new_index_teacher button-group" type="button" value="取消">
+        </form>
+    {% else %}
+        <p>无法找到该页</p>
+    {% endif %}
+</div>
+<div id="cover">
+
+</div>

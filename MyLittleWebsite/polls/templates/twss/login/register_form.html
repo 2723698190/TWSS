@@ -1,0 +1,58 @@
+{% load staticfiles %}
+<script src="{% static 'polls/js/alert_form_cancle.js' %}"></script>
+<link rel="stylesheet" href="{% static 'polls/css/academic_officer_alert.css' %}"/>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#add_submit").click(function () {
+            $.ajax({
+                type:"POST",
+                data:$("#form_target").serialize(),
+                url:"{% url 'polls:index_register' type %}",
+                datatype:"json",
+                success: function(data){
+                    if (data==="1"){
+                        $("#form").animate({top:'-600px'},function () {
+                            $("#form_load").html(" ");
+                        });
+                    }else if(data==="2") {
+                        $("#form").animate({top:'-600px'},function () {
+                            $("#form_load").html(" ");
+                            $("#loop").load("{% url 'polls:management_of_teacher_resource_select' %}",{department:'{{ department }}'})
+                        });
+                    }else{
+                        $("#form").animate({top:'-600px'},function () {
+                            $("#form_load").html(data);
+                        });
+
+                    }
+                },
+                error: function(data) {
+                    alert(data);
+                }
+            });
+        });
+    });
+</script>
+
+
+<div id="form">
+    {% if register_form %}
+        <form method="post" id="form_target">
+            {% csrf_token %}
+            <input type="hidden" name="type" value="{{ type }}">
+            <table>
+                {{ register_form.as_table }}
+                {{ profile_form.as_table }}
+            </table>
+            <a class="close-reveal-modal cancel_new_index_teacher">×</a>
+            <input class="button-group" id="add_submit" type="button" value="提交">
+            <input class="cancel_new_index_teacher button-group" type="button" value="取消">
+        </form>
+    {% else %}
+        <p>error:can't find page</p>
+    {% endif %}
+</div>
+<div id="cover">
+
+</div>

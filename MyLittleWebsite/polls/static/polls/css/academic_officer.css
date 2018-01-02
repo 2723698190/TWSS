@@ -1,0 +1,127 @@
+
+.select{
+    height: 50px;
+    /*border:1px solid black;*/
+    display: inline-block;
+}
+.select span{
+    cursor: pointer;
+    position: relative;
+    top: 27px;
+    /*border: 1px solid red;*/
+    padding: 4px 6px;
+    background-color: #ffffff;
+    height: 40px;
+}
+.select span:hover{
+    background-color: #e7e7e7 !important;
+    color: #000 !important;
+}
+.search_table{
+    float: right;
+    margin-top: 23px;
+    display: inline-block;
+}
+
+
+.content_right{
+    background-color: #edf2f6;
+}
+
+
+.teacher_info{
+    color: blue;
+    cursor: pointer;
+}
+.teacher_info:hover{
+    color: #000089;
+    text-decoration: underline;
+}
+
+#edge{
+    position: fixed;
+    top: 100px;
+    right: 0;
+    padding: 2px 5px;
+    /*background-color: #bdbdbd;*/
+    color: #ffffff;
+    /*box-sizing: border-box;*/
+
+    /*color: #000000;*/
+    box-shadow: 0 0 8px rgba(0,0,0,.4);
+    text-align: center;
+    background-color: #ffffff;
+    border-radius: 2px;
+    box-sizing: border-box;
+}
+#edge a:hover{
+    color: #000089;
+    text-decoration: underline;
+}
+#form_load{
+    text-align: center;
+}
+
+.queryset_table{
+    margin-left: 80px;
+    margin-right: 0;
+    min-width: 980px;
+}
+.bur{
+    margin-left: 80px;
+    margin-right: 0;
+    width: 85%;
+    /*min-width: 980px;*/
+}
+
+/*教师查询表格*/
+#loop{
+    /*margin-top: 5px;*/
+    margin-left: 80px;
+    padding: 15px 15px 15px;
+    width: 85%;
+    color: #000000;
+    box-shadow: 0 0 8px rgba(0,0,0,.4);
+    text-align: center;
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+.teacher_table_style{
+    margin: 0 auto;
+    width: 100%;
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+.teacher_table_style tr td{
+    text-align: center;
+    border-bottom: 1px solid #efefef;
+}
+.teacher_table_style tr td, .teacher_table_style tr th{
+    padding: 3px;
+}
+.teacher_table_style tr:hover{
+    background-color: #f3f3f3;
+}
+
+
+.deleted, .add, .edit{
+    width: 14px;
+    height: 14px;
+}
+
+
+/*工作量系数*/
+.teacher_table_style tr td input{
+    width: 58px;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    color: #555;
+    text-align: center;
+    line-height: 1.42857143;
+}
+.teacher_table_style tr td input:focus{
+    box-shadow: 0 0 8px rgba(82,168,236,.6);
+}

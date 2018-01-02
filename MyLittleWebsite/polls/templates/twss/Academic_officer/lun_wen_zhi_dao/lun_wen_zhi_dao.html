@@ -1,0 +1,276 @@
+{% load staticfiles %}
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(".up_arrow").click(function () {
+            alert("up");
+            var type_ordered = $(this).attr("alt");
+            $("#loop").load("{% url 'polls:index_A_O_SJ_paper_guide_select' department_id %}",{type_order:type_ordered},function(){
+                alert("成功")
+            });
+        });
+        $(".down_arrow").click(function () {
+            alert("down");
+            var type_ordered = $(this).attr("alt");
+            $("#loop").load("{% url 'polls:index_A_O_SJ_paper_guide_select' department_id %}",{type_order:type_ordered},function(){
+                alert("成功")
+            });
+        });
+        $("#next_page").click(function (){
+            {% if items_list.has_next %}
+                {% if type_order %}
+                    $.post("{% url 'polls:index_A_O_SJ_paper_guide_select' department_id %}",{page:'{{ items_list.next_page_number }}',type_order:'{{ type_order }}' },function(data){
+                        $("#loop").html(data);
+                    });
+                {% else %}
+                    $.post("{% url 'polls:index_A_O_SJ_paper_guide_select' department_id %}",{page:'{{ items_list.next_page_number }}' },function(data){
+                        $("#loop").html(data);
+                    });
+                {% endif %}
+            {% endif %}
+        });
+        $("#previous_page").click(function (){
+            {% if items_list.has_previous %}
+                {% if type_order %}
+                    $.post("{% url 'polls:index_A_O_SJ_paper_guide_select' department_id %}",{page:'{{ items_list.previous_page_number }}',type_order:'{{ type_order }}' },function(data){
+                        $("#loop").html(data);
+                    });
+                {% else %}
+                    $.post("{% url 'polls:index_A_O_SJ_paper_guide_select' department_id %}",{page:'{{ items_list.previous_page_number }}' },function(data){
+                        $("#loop").html(data);
+                    });
+                {% endif %}
+            {% endif %}
+        });
+
+        {#        查看教师信息#}
+        $(".teacher_info").click(function () {
+            href = $(this).attr("title");
+            $.get(href, function (ret) {
+                $("#form_load").html(ret);
+            });
+        });
+{#        查看拒绝原因#}
+        $(".reject_reason").click(function () {
+            href = $(this).attr("title");
+            $.get(href,function(ret){
+                $("#form_load" ).html(ret);
+            });
+        });
+        function countChecked() {
+            var count = 0;
+            var checkedList=$("input[name='test']");
+            for (var i = 0; i<checkedList.length; i++){
+                if(checkedList[i].checked == true){
+                    count++;
+                }
+            }
+            return count
+        }
+        $("#reject").click(function () {
+            var  reject_id=$("input[name='test']").serialize();
+            var counter=countChecked(reject_id);
+            if(counter==1){
+                $.ajax({
+                    type:"GET",
+                    data:reject_id,
+                    url:"{% url 'polls:index_A_O_SJ_paper_guide_reject' department_id %}",
+                    datatype:"json",
+                    success: function(data){
+                        if(data==='1'){
+                            alert("未在审核时间内，该功能暂禁用")
+                        }else if (data==='2') {
+                            alert("该记录不存在")
+                        }else if (data==='3') {
+                            alert("系负责人尚未审核")
+                        }else{
+                            $("#form_load").html(data)
+                        }
+                    },
+                    error: function(data) {
+                        alert(data);
+                    }
+                });
+            }else {
+                alert("必须选择一条记录")
+            }
+        });
+
+
+        $("#pass").click(function () {
+                $.ajax({
+                    type:"GET",
+                    data:$("input[name='test']").serialize(),
+                    url:"{% url 'polls:index_A_O_SJ_paper_guide_pass' department_id %}",
+                    datatype:"json",
+                    success: function(data){
+                        if(data==='1'){
+                            alert("未在审核时间内，该功能暂禁用")
+                        }else {
+                            alert("已审核");
+{#                            $("#loop").html(data);#}
+                            $("#loop").load(
+                                "{% url 'polls:index_A_O_SJ_paper_guide_select' department_id %}");
+                        }
+                    },
+                    error: function(data) {
+                        alert(data);
+                    }
+                });
+        });
+        var isCheckAll = false;
+        $("#check_all").click(function () {
+            if (isCheckAll) {
+                $("input[type='checkbox']").each(function() {
+                    this.checked = false;
+                });
+                isCheckAll = false;
+            } else {
+                $("input[type='checkbox']").each(function() {
+                    this.checked = true;
+                });
+                isCheckAll = true;
+            }
+        });
+        $("#search_button").click(function () {
+            $.ajax({
+                type:"POST",
+                data:$("#search_form").serialize(),
+                url:"{% url 'polls:index_A_O_SJ_paper_guide_search' %}",
+                datatype:"json",
+                success: function(data){
+                    $("#loop").html(data);
+                    $("#zonglan").css({height: 30, bottom: -50, background:'transparent'});
+
+                },
+                error: function(data) {
+                    alert(data);
+                }
+            });
+        });
+    });
+
+</script>
+<div class="title_top">
+    <h1 class="content_title">论文指导</h1>
+<div class="bur">
+    <div class="operater">
+        <input class="button_top" id="pass" type="button" value="通过">
+        <input class="button_top" id="reject" type="button" value="驳回">
+    </div>
+    <div class="search_table">
+            <form id="search_form">
+        <input type="hidden" name="department_search" value="{{ department_id }}">
+        <table>
+            <tr>
+                <td id="search_l">
+                    <label for="search_type">搜索方式</label>
+                    <select name="search_type" id="search_type">
+                        <option value="teacher_name">
+                            姓名
+                        </option>
+                        <option value="teacher_card">
+                            工号
+                        </option>
+                        <option value="paper">
+                            成果
+                        </option>
+                    </select>
+                </td>
+                <td id="search_c"><input type="text" name="search_text" placeholder="请输入关键字"></td>
+                <td id="search_r"><input id="search_button" type="button" value="搜索"></td>
+            </tr>
+        </table>
+               <input class="hidden">
+    </form>
+</div>
+
+    </div>
+</div>
+
+<div class="nav_down">
+    <div id="loop">
+        <table class="teacher_table_style">
+            <tr>
+                <th><input type="checkbox" id="check_all"></th>
+                <th>
+                    年度
+                </th>
+                <th>
+                    教师
+                    <img class="up_arrow" src="{% static 'polls/images/up_arrow.png' %}" alt="teacher_up_arrow">
+                    <img class="down_arrow" src="{% static 'polls/images/down_arrow.png' %}" alt="teacher_down_arrow">
+
+                </th>
+                <th>
+                    成果
+                    <img class="up_arrow" src="{% static 'polls/images/up_arrow.png' %}" alt="achievement_up_arrow">
+                    <img class="down_arrow" src="{% static 'polls/images/down_arrow.png' %}" alt="achievement_down_arrow">
+
+                </th>
+                <th>
+                    类型
+                    <img class="up_arrow" src="{% static 'polls/images/up_arrow.png' %}" alt="type_up_arrow">
+                    <img class="down_arrow" src="{% static 'polls/images/down_arrow.png' %}" alt="type_down_arrow">
+
+                </th>
+                <th>
+                    获奖
+                </th>
+                <th>获奖时间</th>
+                <th>附件</th>
+                <th>工作量</th>
+                <tH>
+                    状态
+                    <img class="up_arrow" src="{% static 'polls/images/up_arrow.png' %}" alt="state_up_arrow">
+                    <img class="down_arrow" src="{% static 'polls/images/down_arrow.png' %}" alt="state_down_arrow">
+
+                </tH>
+            </tr>
+            {% if items_list %}
+                    {% for items in items_list %}
+                        <tr>
+                            <td><input type="checkbox" name="test" value="{{ items.id }}"></td>
+                            <td>{{ items.year }}</td>
+                            <td class="teacher_info" title="{% url 'polls:index_alert_teacher_info' items.teacher_id.id %}">{{ items.teacher_id.get_full_name }}</td>
+                            <td>{{ items.Paper }}</td>
+                            <td>{{ items.type }}</td>
+                            <td>{{ items.get_level_display }}</td>
+                            <td>{{ items.time }}</td>
+                            <td>{{ items.file }}</td>
+                            <td>{{ items.workload }}</td>
+                            {% if items.state < 2 %}
+                                <td class="reject_reason" title="{% url 'polls:index_alert_PA_reject_reason' items.id %}">{{ items.get_state_display }}</td>
+                            {% else %}
+                                <td>{{ items.get_state_display }}</td>
+                            {% endif %}
+                        </tr>
+                    {% endfor %}
+            {% else %}
+                <tr>
+                    <td colspan="10">{{ erro_message }}</td>
+                </tr>
+            {% endif %}
+{% if items_list.has_other_pages %}
+                    <tr id="paginator">
+                        <td colspan="10">
+                            {% if items_list.has_previous %}
+                                <a id="previous_page">上一页</a>
+                            {% endif %}
+                            <span class="current">
+                                {{ items_list.number }}/{{ items_list.paginator.num_pages }}
+                            </span>
+                            {% if items_list.has_next %}
+                                <a id="next_page" >下一页</a>
+                            {% endif %}
+                        </td>
+                </tr>
+{% endif %}
+        </table>
+    </div>
+
+</div>
+<div id="form_load">
+
+</div>

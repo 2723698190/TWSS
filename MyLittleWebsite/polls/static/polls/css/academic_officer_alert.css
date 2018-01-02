@@ -1,0 +1,121 @@
+#form{
+    width:550px;
+    min-height:150px;
+    position:fixed;
+    margin: 0 auto;
+    padding-top: 14px;
+    padding-bottom: 20px;
+    top: -600px;
+    left:50%;
+    /*top: -200px;*/
+    margin-left:-275px; /* width的一半的相反数 */
+    /*margin-top:-115px;  !* height的一半的相反数 *!*/
+    -webkit-box-shadow: 0 0 10px rgba(0,0,0,.4);
+    z-index: 9999;
+    text-align: center;
+    background-color: ghostwhite;
+    border-radius: 5px;
+}
+/*关闭*/
+.close-reveal-modal {
+    font-size: 22px;
+    line-height: 1.42857143;
+    position: absolute;
+    top: 4px;
+    right: 11px;
+    color: #aaa;
+    font-weight: bold;
+    cursor: pointer;
+}
+.close-reveal-modal:hover{
+    color: #000;
+}
+#cover{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9;
+    background-color: rgba(0,0,0,.8);
+    /*opacity: 0.3;*/
+
+}
+#new_index_title{
+    text-align: center;
+    margin-bottom: 5px;
+}
+#form table{
+    width: 100%;
+}
+#form table tr{
+    height: 25px;
+}
+#form table th{
+    width: 50%;
+    text-align: right;
+    padding-right: 40px;
+}
+#form table td{
+    width: 50%;
+    text-align: left;
+    padding-left: 10px;
+}
+/*表单各控件样式*/
+.form-control input, .form-control select, #form table td input, #form table td select{
+    width: 158px;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    color: #555;
+    text-align: center;
+    line-height: 1.42857143;
+}
+#id_file, #id_start_time_year, #id_start_time_month, #id_start_time_day, #id_end_time_year, #id_end_time_month, #id_end_time_day{
+    width: auto !important;
+}
+#form table td input[type="checkbox"]{
+    width: 20px;
+}
+#class_list{
+    margin: 0 auto;
+    width: 400px;
+}
+.form-control input:focus, .form-control select:focus, #form table td input[type="text"]:focus, #form table td select:focus {
+    box-shadow: 0 0 8px rgba(82,168,236,.6);
+}
+option{
+    text-align: center;
+}
+#new_index_cancle{
+    position: absolute;
+    top:0;
+    right:0;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+/*提交及取消按钮*/
+.button-group{
+    margin-top: 10px;
+    padding: 5px 16px;
+    line-height: 1.3333333;
+    border-radius: 6px;
+    color: #fff;
+    background-color: #337ab7;
+    border-color: #2e6da4;
+    text-align: center;
+    cursor: pointer;
+}
+.errorlist {
+    color: #ff442c;
+    font-size: 10px;
+}
+/*起止时间弹窗*/
+/*当前起止时间*/
+#index_title_down{
+    color: #888888;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}

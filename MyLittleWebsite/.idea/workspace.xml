@@ -1,0 +1,1548 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/polls/models.py" line="155" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="8f223354-11c9-4d0a-9c34-a8b8acb48d5c" name="Default" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_TABLE_DETAILS" value="true" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+  </component>
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="MyLittleWebsite" />
+  </component>
+  <component name="FileEditorManager">
+    <splitter split-orientation="horizontal" split-proportion="0.45883942">
+      <split-first>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
+          <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/polls/views.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="227">
+                  <caret line="2877" column="90" lean-forward="true" selection-start-line="2877" selection-start-column="90" selection-end-line="2877" selection-end-column="90" />
+                  <folding>
+                    <element signature="e#49#59#0" expanded="true" />
+                    <element signature="e#5891#7512#0" expanded="false" />
+                    <element signature="e#7584#9678#0" expanded="false" />
+                    <element signature="e#7784#8039#0" expanded="false" />
+                    <element signature="e#8086#8341#0" expanded="false" />
+                    <element signature="e#8388#8488#0" expanded="false" />
+                    <element signature="e#8535#8790#0" expanded="false" />
+                    <element signature="e#9748#12350#0" expanded="false" />
+                    <element signature="e#9948#10129#0" expanded="false" />
+                    <element signature="e#10176#10440#0" expanded="false" />
+                    <element signature="e#10487#11513#0" expanded="false" />
+                    <element signature="e#11560#11744#0" expanded="false" />
+                    <element signature="e#12423#13917#0" expanded="false" />
+                    <element signature="e#12665#12951#0" expanded="false" />
+                    <element signature="e#13007#13293#0" expanded="false" />
+                    <element signature="e#13978#14902#0" expanded="false" />
+                    <element signature="e#14969#20635#0" expanded="false" />
+                    <element signature="e#20715#22966#0" expanded="false" />
+                    <element signature="e#23049#24897#0" expanded="false" />
+                    <element signature="e#24946#25028#0" expanded="false" />
+                    <element signature="e#25079#25161#0" expanded="false" />
+                    <element signature="e#25216#25331#0" expanded="false" />
+                    <element signature="e#25386#25501#0" expanded="false" />
+                    <element signature="e#25556#25671#0" expanded="false" />
+                    <element signature="e#25704#27724#0" expanded="false" />
+                    <element signature="e#27945#28104#0" expanded="false" />
+                    <element signature="e#28178#28884#0" expanded="false" />
+                    <element signature="e#29542#29776#0" expanded="false" />
+                    <element signature="e#29863#30106#0" expanded="false" />
+                    <element signature="e#30199#30373#0" expanded="false" />
+                    <element signature="e#30455#30667#0" expanded="false" />
+                    <element signature="e#30760#30934#0" expanded="false" />
+                    <element signature="e#31011#31226#0" expanded="false" />
+                    <element signature="e#31319#31488#0" expanded="false" />
+                    <element signature="e#31567#31774#0" expanded="false" />
+                    <element signature="e#31867#32036#0" expanded="false" />
+                    <element signature="e#32132#32303#0" expanded="false" />
+                    <element signature="e#32377#32583#0" expanded="false" />
+                    <element signature="e#32676#32844#0" expanded="false" />
+                    <element signature="e#32962#33794#0" expanded="false" />
+                    <element signature="e#33920#36796#0" expanded="false" />
+                    <element signature="e#34115#35992#0" expanded="false" />
+                    <element signature="e#36019#36382#0" expanded="false" />
+                    <element signature="e#36942#39656#0" expanded="false" />
+                    <element signature="e#37064#37110#0" expanded="false" />
+                    <element signature="e#37152#39145#0" expanded="false" />
+                    <element signature="e#39164#39656#0" expanded="false" />
+                    <element signature="e#39783#39975#0" expanded="false" />
+                    <element signature="e#40099#41105#0" expanded="false" />
+                    <element signature="e#41176#41483#0" expanded="false" />
+                    <element signature="e#42381#43194#0" expanded="false" />
+                    <element signature="e#43323#46522#0" expanded="false" />
+                    <element signature="e#43687#43944#0" expanded="false" />
+                    <element signature="e#43987#44245#0" expanded="false" />
+                    <element signature="e#45630#46472#0" expanded="false" />
+                    <element signature="e#45700#45789#0" expanded="false" />
+                    <element signature="e#45826#45916#0" expanded="false" />
+                    <element signature="e#45951#46042#0" expanded="false" />
+                    <element signature="e#46077#46156#0" expanded="false" />
+                    <element signature="e#46679#47186#0" expanded="false" />
+                    <element signature="e#47334#51991#0" expanded="false" />
+                    <element signature="e#50086#51991#0" expanded="false" />
+                    <element signature="e#51132#51504#0" expanded="false" />
+                    <element signature="e#52118#52422#0" expanded="false" />
+                    <element signature="e#52552#53221#0" expanded="false" />
+                    <element signature="e#53348#55843#0" expanded="false" />
+                    <element signature="e#55142#55796#0" expanded="false" />
+                    <element signature="e#55983#56425#0" expanded="false" />
+                    <element signature="e#56563#58269#0" expanded="false" />
+                    <element signature="e#58400#58992#0" expanded="false" />
+                    <element signature="e#59124#59796#0" expanded="false" />
+                    <element signature="e#59925#61855#0" expanded="false" />
+                    <element signature="e#60469#60920#0" expanded="false" />
+                    <element signature="e#62002#62454#0" expanded="false" />
+                    <element signature="e#64436#64971#0" expanded="false" />
+                    <element signature="e#65097#65639#0" expanded="false" />
+                    <element signature="e#65762#67029#0" expanded="false" />
+                    <element signature="e#67151#67537#0" expanded="false" />
+                    <element signature="e#67670#68842#0" expanded="false" />
+                    <element signature="e#69000#70187#0" expanded="false" />
+                    <element signature="e#70295#70654#0" expanded="false" />
+                    <element signature="e#70783#71192#0" expanded="false" />
+                    <element signature="e#71304#71482#0" expanded="false" />
+                    <element signature="e#71588#73873#0" expanded="false" />
+                    <element signature="e#73964#75398#0" expanded="false" />
+                    <element signature="e#75497#76631#0" expanded="false" />
+                    <element signature="e#76721#77377#0" expanded="false" />
+                    <element signature="e#76891#76971#0" expanded="false" />
+                    <element signature="e#77483#79264#0" expanded="false" />
+                    <element signature="e#79359#80744#0" expanded="false" />
+                    <element signature="e#80847#83171#0" expanded="false" />
+                    <element signature="e#82578#82647#0" expanded="false" />
+                    <element signature="e#82687#82937#0" expanded="false" />
+                    <element signature="e#82956#83171#0" expanded="false" />
+                    <element signature="e#84675#85342#0" expanded="false" />
+                    <element signature="e#85444#87203#0" expanded="false" />
+                    <element signature="e#85959#86200#0" expanded="false" />
+                    <element signature="e#87292#88670#0" expanded="false" />
+                    <element signature="e#88770#91235#0" expanded="false" />
+                    <element signature="e#91328#92633#0" expanded="false" />
+                    <element signature="e#92718#93377#0" expanded="false" />
+                    <element signature="e#93464#95224#0" expanded="false" />
+                    <element signature="e#95324#97778#0" expanded="false" />
+                    <element signature="e#97860#99258#0" expanded="false" />
+                    <element signature="e#99347#100609#0" expanded="false" />
+                    <element signature="e#100690#101356#0" expanded="false" />
+                    <element signature="e#101439#103198#0" expanded="false" />
+                    <element signature="e#103318#103521#0" expanded="false" />
+                    <element signature="e#103634#103829#0" expanded="false" />
+                    <element signature="e#103946#104149#0" expanded="false" />
+                    <element signature="e#105255#107109#0" expanded="false" />
+                    <element signature="e#107197#109216#0" expanded="false" />
+                    <element signature="e#109256#110017#0" expanded="false" />
+                    <element signature="e#110089#110902#0" expanded="false" />
+                    <element signature="e#110974#112546#0" expanded="false" />
+                    <element signature="e#114781#115261#0" expanded="false" />
+                    <element signature="e#115383#115912#0" expanded="false" />
+                    <element signature="e#116041#117875#0" expanded="false" />
+                    <element signature="e#118001#118699#0" expanded="false" />
+                    <element signature="e#118837#119042#0" expanded="false" />
+                    <element signature="e#119178#120439#0" expanded="false" />
+                    <element signature="e#120568#121824#0" expanded="false" />
+                    <element signature="e#121955#122497#0" expanded="false" />
+                    <element signature="e#122627#124450#0" expanded="false" />
+                    <element signature="e#124577#125282#0" expanded="false" />
+                    <element signature="e#125341#125557#0" expanded="false" />
+                    <element signature="e#125696#126968#0" expanded="false" />
+                    <element signature="e#127098#128563#0" expanded="false" />
+                    <element signature="e#128688#129262#0" expanded="false" />
+                    <element signature="e#129345#130628#0" expanded="false" />
+                    <element signature="e#130760#131498#0" expanded="false" />
+                    <element signature="e#131630#134056#0" expanded="false" />
+                    <element signature="e#134115#134396#0" expanded="false" />
+                    <element signature="e#134466#134734#0" expanded="false" />
+                    <element signature="e#134792#135114#0" expanded="false" />
+                    <element signature="e#135243#137690#0" expanded="false" />
+                    <element signature="e#137785#139389#0" expanded="false" />
+                    <element signature="e#139494#142919#0" expanded="false" />
+                    <element signature="e#143049#143407#0" expanded="false" />
+                    <element signature="e#143539#144772#0" expanded="false" />
+                    <element signature="e#144334#144772#0" expanded="false" />
+                    <element signature="e#144851#145689#0" expanded="false" />
+                    <element signature="e#146201#146532#0" expanded="false" />
+                    <element signature="e#146768#148826#0" expanded="false" />
+                    <element signature="e#148121#148706#0" expanded="false" />
+                    <element signature="e#149247#150533#0" expanded="false" />
+                    <element signature="e#150584#151563#0" expanded="false" />
+                    <element signature="e#151983#152996#0" expanded="false" />
+                    <element signature="e#153424#154879#0" expanded="false" />
+                    <element signature="e#154037#154759#0" expanded="false" />
+                    <element signature="e#154972#159177#0" expanded="false" />
+                    <element signature="e#158874#159175#0" expanded="false" />
+                    <element signature="e#160388#160592#0" expanded="false" />
+                    <element signature="e#160838#161044#0" expanded="false" />
+                    <element signature="e#161378#161443#0" expanded="false" />
+                    <element signature="e#161651#161716#0" expanded="false" />
+                    <element signature="e#163600#163891#0" expanded="false" />
+                    <element signature="e#163954#170788#0" expanded="false" />
+                    <element signature="e#166265#167535#0" expanded="false" />
+                    <element signature="e#167685#167717#0" expanded="false" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/polls/models.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="5451">
+                  <caret line="303" column="19" lean-forward="false" selection-start-line="303" selection-start-column="19" selection-end-line="303" selection-end-column="19" />
+                  <folding>
+                    <element signature="e#24#52#0" expanded="true" />
+                    <element signature="e#2927#6824#0" expanded="false" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/MyLittleWebsite/settings.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="4462">
+                  <caret line="195" column="20" lean-forward="false" selection-start-line="195" selection-start-column="20" selection-end-line="195" selection-end-column="20" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/MyLittleWebsite/urls.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="0">
+                  <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="AccountForms.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/polls/AccountForms.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="236">
+                  <caret line="294" column="0" lean-forward="true" selection-start-line="294" selection-start-column="0" selection-end-line="294" selection-end-column="0" />
+                  <folding>
+                    <element signature="e#23#47#0" expanded="true" />
+                    <element signature="e#337#1487#0" expanded="false" />
+                    <element signature="e#1532#2295#0" expanded="false" />
+                    <element signature="e#2345#3330#0" expanded="false" />
+                    <element signature="e#3375#3997#0" expanded="false" />
+                    <element signature="e#4048#4681#0" expanded="false" />
+                    <element signature="e#4720#6547#0" expanded="false" />
+                    <element signature="e#7952#8175#0" expanded="false" />
+                    <element signature="e#8392#9017#0" expanded="false" />
+                    <element signature="e#9071#9740#0" expanded="false" />
+                    <element signature="e#10117#10211#0" expanded="false" />
+                    <element signature="e#10413#11012#0" expanded="false" />
+                    <element signature="e#11053#11616#0" expanded="false" />
+                    <element signature="e#12564#17940#0" expanded="false" />
+                    <element signature="e#17983#18311#0" expanded="false" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
+          <file leaf-file-name="index_teacher_achievement_add.html" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/polls/templates/twss/teacher/index_teacher_achievement/index_teacher_achievement_add.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="391">
+                  <caret line="17" column="6" lean-forward="false" selection-start-line="17" selection-start-column="6" selection-end-line="17" selection-end-column="6" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="index_teacher_competition_guide_edit.html" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/polls/templates/twss/teacher/index_teacher_competition_guide/index_teacher_competition_guide_edit.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="483">
+                  <caret line="21" column="13" lean-forward="false" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="academic_officer.html" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/polls/templates/twss/Academic_officer/academic_officer.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="6670">
+                  <caret line="290" column="15" lean-forward="false" selection-start-line="290" selection-start-column="15" selection-end-line="290" selection-end-column="15" />
+                  <folding>
+                    <element signature="n#block#1;n#!!top" expanded="false" />
+                    <element signature="e#12819#14348#0#HTML" expanded="false" />
+                    <element signature="e#12887#14337#0#HTML" expanded="false" />
+                    <element signature="e#12925#12931#0#HTML" expanded="false" />
+                    <element signature="e#12931#12937#0#HTML" expanded="false" />
+                    <element signature="e#12937#12943#0#HTML" expanded="false" />
+                    <element signature="e#12996#13002#0#HTML" expanded="false" />
+                    <element signature="e#13002#13008#0#HTML" expanded="false" />
+                    <element signature="e#13008#13014#0#HTML" expanded="false" />
+                    <element signature="e#13054#13060#0#HTML" expanded="false" />
+                    <element signature="e#13060#13066#0#HTML" expanded="false" />
+                    <element signature="e#13066#13072#0#HTML" expanded="false" />
+                    <element signature="e#13158#13164#0#HTML" expanded="false" />
+                    <element signature="e#13164#13170#0#HTML" expanded="false" />
+                    <element signature="e#13170#13176#0#HTML" expanded="false" />
+                    <element signature="e#13231#13237#0#HTML" expanded="false" />
+                    <element signature="e#13237#13243#0#HTML" expanded="false" />
+                    <element signature="e#13243#13249#0#HTML" expanded="false" />
+                    <element signature="e#13310#13316#0#HTML" expanded="false" />
+                    <element signature="e#13316#13322#0#HTML" expanded="false" />
+                    <element signature="e#13322#13328#0#HTML" expanded="false" />
+                    <element signature="e#13328#13334#0#HTML" expanded="false" />
+                    <element signature="e#13334#13340#0#HTML" expanded="false" />
+                    <element signature="e#13340#13346#0#HTML" expanded="false" />
+                    <element signature="e#13408#13414#0#HTML" expanded="false" />
+                    <element signature="e#13414#13420#0#HTML" expanded="false" />
+                    <element signature="e#13420#13426#0#HTML" expanded="false" />
+                    <element signature="e#13456#13462#0#HTML" expanded="false" />
+                    <element signature="e#13462#13468#0#HTML" expanded="false" />
+                    <element signature="e#13468#13474#0#HTML" expanded="false" />
+                    <element signature="e#13474#13480#0#HTML" expanded="false" />
+                    <element signature="e#13480#13486#0#HTML" expanded="false" />
+                    <element signature="e#13486#13492#0#HTML" expanded="false" />
+                    <element signature="e#13530#13536#0#HTML" expanded="false" />
+                    <element signature="e#13536#13542#0#HTML" expanded="false" />
+                    <element signature="e#13542#13548#0#HTML" expanded="false" />
+                    <element signature="e#13548#13554#0#HTML" expanded="false" />
+                    <element signature="e#13554#13560#0#HTML" expanded="false" />
+                    <element signature="e#13560#13566#0#HTML" expanded="false" />
+                    <element signature="e#13606#13612#0#HTML" expanded="false" />
+                    <element signature="e#13612#13618#0#HTML" expanded="false" />
+                    <element signature="e#13618#13624#0#HTML" expanded="false" />
+                    <element signature="e#13693#13699#0#HTML" expanded="false" />
+                    <element signature="e#13699#13705#0#HTML" expanded="false" />
+                    <element signature="e#13705#13711#0#HTML" expanded="false" />
+                    <element signature="e#13742#13748#0#HTML" expanded="false" />
+                    <element signature="e#13748#13754#0#HTML" expanded="false" />
+                    <element signature="e#13754#13760#0#HTML" expanded="false" />
+                    <element signature="e#13760#13766#0#HTML" expanded="false" />
+                    <element signature="e#13766#13772#0#HTML" expanded="false" />
+                    <element signature="e#13772#13778#0#HTML" expanded="false" />
+                    <element signature="e#13841#13847#0#HTML" expanded="false" />
+                    <element signature="e#13847#13853#0#HTML" expanded="false" />
+                    <element signature="e#13853#13859#0#HTML" expanded="false" />
+                    <element signature="e#13859#13865#0#HTML" expanded="false" />
+                    <element signature="e#13865#13871#0#HTML" expanded="false" />
+                    <element signature="e#13871#13877#0#HTML" expanded="false" />
+                    <element signature="e#13937#13943#0#HTML" expanded="false" />
+                    <element signature="e#13943#13949#0#HTML" expanded="false" />
+                    <element signature="e#13949#13955#0#HTML" expanded="false" />
+                    <element signature="e#13955#13961#0#HTML" expanded="false" />
+                    <element signature="e#13961#13967#0#HTML" expanded="false" />
+                    <element signature="e#13967#13973#0#HTML" expanded="false" />
+                    <element signature="e#14049#14055#0#HTML" expanded="false" />
+                    <element signature="e#14055#14061#0#HTML" expanded="false" />
+                    <element signature="e#14061#14067#0#HTML" expanded="false" />
+                    <element signature="e#14112#14118#0#HTML" expanded="false" />
+                    <element signature="e#14118#14124#0#HTML" expanded="false" />
+                    <element signature="e#14124#14130#0#HTML" expanded="false" />
+                    <element signature="e#14221#14227#0#HTML" expanded="false" />
+                    <element signature="e#14227#14233#0#HTML" expanded="false" />
+                    <element signature="e#14233#14239#0#HTML" expanded="false" />
+                    <element signature="e#14281#14287#0#HTML" expanded="false" />
+                    <element signature="e#14287#14293#0#HTML" expanded="false" />
+                    <element signature="e#14293#14299#0#HTML" expanded="false" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="teacher.html" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/polls/templates/twss/teacher/teacher.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="309">
+                  <caret line="42" column="11" lean-forward="true" selection-start-line="42" selection-start-column="11" selection-end-line="42" selection-end-column="11" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="management_of_teacher_resource.html" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/polls/templates/twss/department_header/management_of_teacher_resource/management_of_teacher_resource.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="363">
+                  <caret line="87" column="22" lean-forward="false" selection-start-line="87" selection-start-column="22" selection-end-line="87" selection-end-column="22" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="class_excel_upload.html" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/polls/templates/twss/Academic_officer/basic_infomation/class_info/class_excel_upload.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="230">
+                  <caret line="30" column="24" lean-forward="true" selection-start-line="30" selection-start-column="24" selection-end-line="30" selection-end-column="24" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="class_info.html" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/polls/templates/twss/Academic_officer/basic_infomation/class_info/class_info.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="299">
+                  <caret line="46" column="0" lean-forward="false" selection-start-line="46" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="management_of_teacher_resource_edit.html" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/polls/templates/twss/department_header/management_of_teacher_resource/management_of_teacher_resource_edit.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="268">
+                  <caret line="52" column="21" lean-forward="true" selection-start-line="52" selection-start-column="21" selection-end-line="52" selection-end-column="21" />
+                  <folding>
+                    <element signature="n#script#1;n#!!top" expanded="false" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="index_teacher_class_schedule_form.html" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/polls/templates/twss/teacher/index_teacher_class_schedule/index_teacher_class_schedule_form.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="575">
+                  <caret line="25" column="43" lean-forward="false" selection-start-line="25" selection-start-column="43" selection-end-line="25" selection-end-column="43" />
+                  <folding>
+                    <element signature="e#1283#1677#0#HTML" expanded="false" />
+                    <element signature="e#1726#1877#0#HTML" expanded="false" />
+                    <element signature="e#1937#2116#0#HTML" expanded="false" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="index_teacher_class_schedul_add.html" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/polls/templates/twss/teacher/index_teacher_class_schedule/index_teacher_class_schedul_add.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="552">
+                  <caret line="24" column="27" lean-forward="false" selection-start-line="24" selection-start-column="27" selection-end-line="24" selection-end-column="27" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+        <option value="Python Script" />
+        <option value="JavaScript File" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/polls/templates/twss/teacher/index_teacher_paper_guide/index_teacher_paper_guide_select.html" />
+        <option value="$PROJECT_DIR$/polls/templates/twss/Academic_officer/basic_infomation/class_info/class_info_select.html" />
+        <option value="$PROJECT_DIR$/polls/templates/twss/Academic_officer/basic_infomation/class_schedul/class_schedul_select.html" />
+        <option value="$PROJECT_DIR$/polls/templates/twss/Academic_officer/basic_infomation/course_info/course_info_select.html" />
+        <option value="$PROJECT_DIR$/polls/templates/twss/department_header/management_of_teacher_resource/management_of_teacher_resource_select.html" />
+        <option value="$PROJECT_DIR$/polls/templates/twss/Academic_officer/workload_total/workload_total_select.html" />
+        <option value="$PROJECT_DIR$/polls/templates/twss/Academic_officer/workload_total/workload_total.html" />
+        <option value="$PROJECT_DIR$/polls/templates/twss/Academic_officer/basic_infomation/workload_coefficent/workload_coefficent.html" />
+        <option value="$PROJECT_DIR$/polls/templates/twss/teacher/index_teacher_achievement/index_teacher_teaching_achiecement.html" />
+        <option value="$PROJECT_DIR$/polls/templates/twss/teacher/index_teacher_achievement/index_teacher_achievement_select.html" />
+        <option value="$PROJECT_DIR$/polls/templates/twss/teacher/index_teacher_achievement/index_teacher_achievement_edit.html" />
+        <option value="$PROJECT_DIR$/polls/templates/twss/teacher/index_teacher_competition_guide/index_teacher_competition_guide_add.html" />
+        <option value="$PROJECT_DIR$/polls/templates/twss/teacher/index_teacher_teaching_object/index_teacher_teaching_object_add.html" />
+        <option value="$PROJECT_DIR$/polls/templates/twss/teacher/index_teacher_teaching_object/index_teacher_teaching_object_edit.html" />
+        <option value="$PROJECT_DIR$/polls/templates/twss/teacher/index_teacher_teaching_object/index_teacher_teaching_object.html" />
+        <option value="$PROJECT_DIR$/polls/templates/twss/teacher/index_teacher_teaching_object/index_teacher_teaching_object_select.html" />
+        <option value="$PROJECT_DIR$/polls/templates/twss/teacher/index_teacher_competition_guide/index_teacher_competition_guide.html" />
+        <option value="$PROJECT_DIR$/polls/templates/twss/teacher/index_teacher_competition_guide/index_teacher_competition_guide_select.html" />
+        <option value="$PROJECT_DIR$/polls/templates/twss/Academic_officer/date_set/alert_date_set.html" />
+        <option value="$PROJECT_DIR$/polls/static/polls/css/academic_officer.css" />
+        <option value="$PROJECT_DIR$/polls/templates/twss/department_header/management_of_teacher_resource/management_of_teacher_resource.html" />
+        <option value="$PROJECT_DIR$/polls/templates/twss/Academic_officer/jiao_xue_cheng_guo/jiao_xue_cheng_guo_select.html" />
+        <option value="$PROJECT_DIR$/polls/templates/twss/Academic_officer/jiao_xue_xiang_mu/jiao_xue_xiang_mu_select.html" />
+        <option value="$PROJECT_DIR$/polls/templates/twss/Academic_officer/jing_sai_zhi_dao/jing_sai_zhi_dao_select.html" />
+        <option value="$PROJECT_DIR$/polls/templates/twss/Academic_officer/lun_wen_zhi_dao/lun_wen_zhi_dao_select.html" />
+        <option value="$PROJECT_DIR$/polls/templates/twss/teacher/teacher_workload_count.html" />
+        <option value="$PROJECT_DIR$/polls/templates/twss/Academic_officer/jiao_xue_cheng_guo/jiao_xue_cheng_guo.html" />
+        <option value="$PROJECT_DIR$/polls/static/polls/css/base.css" />
+        <option value="$PROJECT_DIR$/polls/templates/twss/Academic_officer/basic_infomation/class_schedul/class_schedul.html" />
+        <option value="$PROJECT_DIR$/polls/templates/twss/Academic_officer/basic_infomation/course_info/course_info.html" />
+        <option value="$PROJECT_DIR$/polls/templates/twss/Academic_officer/jiao_xue_xiang_mu/jiao_xue_xiang_mu.html" />
+        <option value="$PROJECT_DIR$/polls/templates/twss/Academic_officer/jing_sai_zhi_dao/jing_sai_zhi_dao.html" />
+        <option value="$PROJECT_DIR$/polls/templates/twss/Academic_officer/lun_wen_zhi_dao/lun_wen_zhi_dao.html" />
+        <option value="$PROJECT_DIR$/polls/static/polls/css/teacher.css" />
+        <option value="$PROJECT_DIR$/static/polls/css/teacher.css" />
+        <option value="$PROJECT_DIR$/polls/urls.py" />
+        <option value="$PROJECT_DIR$/polls/static/polls/css/teacher_add_edit.css" />
+        <option value="$PROJECT_DIR$/polls/models.py" />
+        <option value="$PROJECT_DIR$/MyLittleWebsite/__init__.py" />
+        <option value="$PROJECT_DIR$/MyLittleWebsite/wsgi.py" />
+        <option value="$PROJECT_DIR$/MyLittleWebsite/settings.py" />
+        <option value="$PROJECT_DIR$/polls/templates/twss/teacher/index_teacher_achievement/index_teacher_achievement_add.html" />
+        <option value="$PROJECT_DIR$/polls/templates/twss/teacher/index_teacher_competition_guide/index_teacher_competition_guide_edit.html" />
+        <option value="$PROJECT_DIR$/polls/templates/twss/Academic_officer/academic_officer.html" />
+        <option value="$PROJECT_DIR$/polls/templates/twss/teacher/index_teacher_class_schedule/index_teacher_class_schedule_form.html" />
+        <option value="$PROJECT_DIR$/polls/templates/twss/teacher/teacher.html" />
+        <option value="$PROJECT_DIR$/polls/AccountForms.py" />
+        <option value="$PROJECT_DIR$/polls/templates/twss/department_header/management_of_teacher_resource/management_of_teacher_resource_edit.html" />
+        <option value="$PROJECT_DIR$/polls/templates/twss/Academic_officer/basic_infomation/class_info/class_excel_upload.html" />
+        <option value="$PROJECT_DIR$/polls/templates/twss/Academic_officer/basic_infomation/class_info/class_info.html" />
+        <option value="$PROJECT_DIR$/polls/views.py" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-14" />
+    <option name="y" value="76" />
+    <option name="width" value="1438" />
+    <option name="height" value="1003" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MyLittleWebsite" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MyLittleWebsite" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MyLittleWebsite" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MyLittleWebsite" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="polls" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MyLittleWebsite" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MyLittleWebsite" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="polls" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MyLittleWebsite" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MyLittleWebsite" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="polls" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="twss" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MyLittleWebsite" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MyLittleWebsite" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="polls" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="twss" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Academic_officer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MyLittleWebsite" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MyLittleWebsite" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="polls" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="twss" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Academic_officer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="basic_infomation" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MyLittleWebsite" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MyLittleWebsite" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="polls" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="twss" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Academic_officer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="basic_infomation" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="class_schedul" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MyLittleWebsite" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MyLittleWebsite" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MyLittleWebsite" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="F:/课件" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
+    <property name="ChangesBrowser.SHOW_FLATTEN" value="false" />
+    <property name="SearchEverywhereHistoryKey" value="management&#9;null&#9;null&#10;ma&#9;null&#9;null&#10;index_teacher_class_pass&#9;null&#9;null&#10;competition_gui&#9;null&#9;null&#10;competition_edi&#9;FILE&#9;file://F:/document/MyLittleWebsite/polls/templates/twss/teacher/index_teacher_competition_guide/index_teacher_competition_guide_edit.html&#10;index_teacher_ach&#9;null&#9;null&#10;some_excel_ret_view&#9;null&#9;null&#10;alert_tea&#9;null&#9;null&#10;index_alert_teacher_info&#9;null&#9;null&#10;workload_&#9;null&#9;null&#10;alert_&#9;FILE&#9;file://F:/document/MyLittleWebsite/polls/templates/twss/Academic_officer/alert_teacher_info.html&#10;workload_count&#9;null&#9;null&#10;theory&#9;null&#9;null&#10;workload_cou&#9;null&#9;null&#10;teaching_achievement_count&#9;null&#9;null&#10;workload&#9;null&#9;null&#10;index_A_O_input_time_set&#9;null&#9;null&#10;internship_count&#9;null&#9;null&#10;experimental_course_count&#9;null&#9;null&#10;workload_sum&#9;null&#9;null&#10;theory_course_count&#9;null&#9;null&#10;index_AO_class_schedul_delete&#9;null&#9;null&#10;index_AO_class_list&#9;null&#9;null&#10;index_AO_class_schedul_search_function&#9;null&#9;null&#10;login_form&#9;FILE&#9;file://F:/document/MyLittleWebsite/polls/templates/twss/login/login_form_select.html&#10;Login_Form&#9;null&#9;null&#10;user_info_content_table&#9;null&#9;null&#10;index_change_password&#9;null&#9;null&#10;MOTRS_teacher_info_delete&#9;null&#9;null&#10;index_reg&#9;null&#9;null&#10;index_A_O_set_year&#9;null&#9;null&#10;formcontrol&#9;null&#9;null&#10;excel_upload_teacher&#9;null&#9;null&#10;index_A_O_examination_time_set&#9;null&#9;null&#10;jiao_gai_xiang_mu&#9;null&#9;null&#10;index_teacheer_achievement_new_jiao_gai_xiang_mu&#9;null&#9;null&#10;index_regi&#9;null&#9;null&#10;index_AO_course_list&#9;null&#9;null&#10;index&#9;null&#9;null&#10;index_AO_class_schedul_edit&#9;null&#9;null&#10;index_A_O_SJ_teaching_object_reject&#9;null&#9;null&#10;index_A_O_teaching_achievement_reject_reason&#9;null&#9;null&#10;index_teacher_class_select&#9;null&#9;null&#10;alert_reason&#9;null&#9;null&#10;reject_reaso&#9;null&#9;null&#10;index_AO_teacher_list&#9;null&#9;null&#10;set_year&#9;null&#9;null&#10;excel&#9;null&#9;null" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\document\MyLittleWebsite\polls\templates\twss\Academic_officer\workload_total" />
+      <recent name="F:\document\MyLittleWebsite\polls\templates\twss\teacher\index_teacher_class_schedule" />
+      <recent name="F:\document\MyLittleWebsite\polls\static\polls\images" />
+      <recent name="F:\document\MyLittleWebsite\polls\templates\twss\teacher" />
+      <recent name="F:\document\MyLittleWebsite\polls\templates\twss\Academic_officer\basic_infomation\class_schedul" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\document\MyLittleWebsite\polls\templates\twss\teacher\index_teacher_class_schedule" />
+      <recent name="F:\document\MyLittleWebsite\polls\templates\twss" />
+      <recent name="F:\document\MyLittleWebsite\polls\templates\twss\Academic_officer\workload_total" />
+      <recent name="F:\document\MyLittleWebsite\polls\templates\twss\department_header\management_of_teacher_resource" />
+      <recent name="F:\document\MyLittleWebsite\polls\templates\twss\department_header\biotechnology_header" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Django server.MyLittleWebsite">
+    <configuration default="true" type="DjangoTestsConfigurationType" factoryName="Django tests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="MyLittleWebsite" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="TARGET" value="" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerJest" factoryName="Jest">
+      <node-interpreter value="project" />
+      <working-dir value="" />
+      <envs />
+      <scope-kind value="ALL" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerProtractor" factoryName="Protractor">
+      <config-file value="" />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="PyBehaveRunConfigurationType" factoryName="Behave">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="MyLittleWebsite" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="ADDITIONAL_ARGS" value="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="PyLettuceRunConfigurationType" factoryName="Lettuce">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="MyLittleWebsite" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="ADDITIONAL_ARGS" value="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="Python.DjangoServer" factoryName="Django server">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="MyLittleWebsite" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="Tox" factoryName="Tox">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <module name="MyLittleWebsite" />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
+      <command value="run" />
+      <scripts />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Doctests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="MyLittleWebsite" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Unittests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="MyLittleWebsite" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;.&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method />
+    </configuration>
+    <configuration default="false" name="MyLittleWebsite" type="Python.DjangoServer" factoryName="Django server">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="DJANGO_SETTINGS_MODULE" value="MyLittleWebsite.settings" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="MyLittleWebsite" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
+      <method />
+    </configuration>
+    <list size="1">
+      <item index="0" class="java.lang.String" itemvalue="Django server.MyLittleWebsite" />
+    </list>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="StructureViewFactory">
+    <option name="ACTIVE_ACTIONS" value=",DDL statements" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8f223354-11c9-4d0a-9c34-a8b8acb48d5c" name="Default" comment="" />
+      <created>1501505895209</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1501505895209</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-14" y="76" width="1438" height="1003" extended-state="0" />
+    <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21713442" sideWeight="0.4947994" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32875144" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21071012" sideWeight="0.504329" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298913" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32828283" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33292383" sideWeight="0.495671" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20731707" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26904178" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.0037756204" sideWeight="0.50520056" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3993015" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32885906" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.38697788" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Concurrent Activities Diagram" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32945284" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="processedProjectFiles" value="true" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/polls/views.py</url>
+          <line>1281</line>
+          <option name="timeStamp" value="197" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="208" />
+    </breakpoint-manager>
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/polls/static/polls/images/background_1.jpg" />
+    <entry file="file://$PROJECT_DIR$/polls/static/polls/images/background_2.jpg" />
+    <entry file="file://$PROJECT_DIR$/polls/static/polls/images/background_3.jpg" />
+    <entry file="file://$PROJECT_DIR$/polls/static/polls/images/register_background.JPG" />
+    <entry file="file://$PROJECT_DIR$/polls/static/polls/images/teacher_add_index_background.jpg" />
+    <entry file="file://$PROJECT_DIR$/polls/static/polls/images/zzu_log_top.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/polls/static/polls/images/up_arrow.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/polls/static/polls/images/select_xl01.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/polls/static/polls/images/select_xl.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/polls/static/polls/images/fall_season_1.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/polls/static/polls/images/down_arrow.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/polls/static/polls/images/background_4.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/polls/static/polls/images/arrows_square_plus.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/polls/images/alert_background.jpg" />
+    <entry file="file://$PROJECT_DIR$/static/polls/images/arrows_square_plus.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/polls/images/background.jpg" />
+    <entry file="file://$PROJECT_DIR$/static/polls/images/background_1.jpg" />
+    <entry file="file://$PROJECT_DIR$/static/polls/images/background_2.jpg" />
+    <entry file="file://$PROJECT_DIR$/static/polls/images/background_3.jpg" />
+    <entry file="file://$PROJECT_DIR$/static/polls/images/background_4.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/polls/images/down_arrow.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/polls/images/fall_season_1.png" />
+    <entry file="file://$PROJECT_DIR$/polls/static/polls/css/teacher.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2047">
+          <caret line="89" column="1" lean-forward="false" selection-start-line="89" selection-start-column="1" selection-end-line="89" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/polls/templates/twss/department_header/management_of_teacher_resource/upload_excel.html" />
+    <entry file="file://$PROJECT_DIR$/polls/templates/twss/login/index_1.html" />
+    <entry file="file://$PROJECT_DIR$/static/polls/images/register_background.JPG" />
+    <entry file="file://$PROJECT_DIR$/static/polls/css/teacher_add_edit.css" />
+    <entry file="file://$PROJECT_DIR$/static/polls/images/teacher_add_index_background.jpg" />
+    <entry file="file://$PROJECT_DIR$/polls/static/polls/css/teacher_add_edit.css" />
+    <entry file="file://$PROJECT_DIR$/polls/templates/twss/Academic_officer/jing_sai_zhi_dao/jing_sai_zhi_dao.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="469">
+          <caret line="171" column="38" lean-forward="false" selection-start-line="171" selection-start-column="38" selection-end-line="171" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/polls/css/teacher.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/polls/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="5" column="10" lean-forward="false" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MyLittleWebsite/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MyLittleWebsite/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MyLittleWebsite/wsgi.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MyLittleWebsite/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4462">
+          <caret line="195" column="20" lean-forward="false" selection-start-line="195" selection-start-column="20" selection-end-line="195" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/polls/static/polls/css/base.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="9223">
+          <caret line="401" column="10" lean-forward="false" selection-start-line="401" selection-start-column="10" selection-end-line="401" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/polls/templates/twss/teacher/index_teacher_achievement/index_teacher_achievement_edit.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="14" column="29" lean-forward="false" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/polls/templates/twss/teacher/index_teacher_achievement/index_teacher_achievement_add.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="17" column="6" lean-forward="false" selection-start-line="17" selection-start-column="6" selection-end-line="17" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/polls/templates/twss/teacher/index_teacher_competition_guide/index_teacher_competition_guide_edit.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="483">
+          <caret line="21" column="13" lean-forward="false" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/polls/templates/twss/Academic_officer/academic_officer.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6670">
+          <caret line="290" column="15" lean-forward="false" selection-start-line="290" selection-start-column="15" selection-end-line="290" selection-end-column="15" />
+          <folding>
+            <element signature="n#block#1;n#!!top" expanded="false" />
+            <element signature="e#12819#14348#0#HTML" expanded="false" />
+            <element signature="e#12887#14337#0#HTML" expanded="false" />
+            <element signature="e#12925#12931#0#HTML" expanded="false" />
+            <element signature="e#12931#12937#0#HTML" expanded="false" />
+            <element signature="e#12937#12943#0#HTML" expanded="false" />
+            <element signature="e#12996#13002#0#HTML" expanded="false" />
+            <element signature="e#13002#13008#0#HTML" expanded="false" />
+            <element signature="e#13008#13014#0#HTML" expanded="false" />
+            <element signature="e#13054#13060#0#HTML" expanded="false" />
+            <element signature="e#13060#13066#0#HTML" expanded="false" />
+            <element signature="e#13066#13072#0#HTML" expanded="false" />
+            <element signature="e#13158#13164#0#HTML" expanded="false" />
+            <element signature="e#13164#13170#0#HTML" expanded="false" />
+            <element signature="e#13170#13176#0#HTML" expanded="false" />
+            <element signature="e#13231#13237#0#HTML" expanded="false" />
+            <element signature="e#13237#13243#0#HTML" expanded="false" />
+            <element signature="e#13243#13249#0#HTML" expanded="false" />
+            <element signature="e#13310#13316#0#HTML" expanded="false" />
+            <element signature="e#13316#13322#0#HTML" expanded="false" />
+            <element signature="e#13322#13328#0#HTML" expanded="false" />
+            <element signature="e#13328#13334#0#HTML" expanded="false" />
+            <element signature="e#13334#13340#0#HTML" expanded="false" />
+            <element signature="e#13340#13346#0#HTML" expanded="false" />
+            <element signature="e#13408#13414#0#HTML" expanded="false" />
+            <element signature="e#13414#13420#0#HTML" expanded="false" />
+            <element signature="e#13420#13426#0#HTML" expanded="false" />
+            <element signature="e#13456#13462#0#HTML" expanded="false" />
+            <element signature="e#13462#13468#0#HTML" expanded="false" />
+            <element signature="e#13468#13474#0#HTML" expanded="false" />
+            <element signature="e#13474#13480#0#HTML" expanded="false" />
+            <element signature="e#13480#13486#0#HTML" expanded="false" />
+            <element signature="e#13486#13492#0#HTML" expanded="false" />
+            <element signature="e#13530#13536#0#HTML" expanded="false" />
+            <element signature="e#13536#13542#0#HTML" expanded="false" />
+            <element signature="e#13542#13548#0#HTML" expanded="false" />
+            <element signature="e#13548#13554#0#HTML" expanded="false" />
+            <element signature="e#13554#13560#0#HTML" expanded="false" />
+            <element signature="e#13560#13566#0#HTML" expanded="false" />
+            <element signature="e#13606#13612#0#HTML" expanded="false" />
+            <element signature="e#13612#13618#0#HTML" expanded="false" />
+            <element signature="e#13618#13624#0#HTML" expanded="false" />
+            <element signature="e#13693#13699#0#HTML" expanded="false" />
+            <element signature="e#13699#13705#0#HTML" expanded="false" />
+            <element signature="e#13705#13711#0#HTML" expanded="false" />
+            <element signature="e#13742#13748#0#HTML" expanded="false" />
+            <element signature="e#13748#13754#0#HTML" expanded="false" />
+            <element signature="e#13754#13760#0#HTML" expanded="false" />
+            <element signature="e#13760#13766#0#HTML" expanded="false" />
+            <element signature="e#13766#13772#0#HTML" expanded="false" />
+            <element signature="e#13772#13778#0#HTML" expanded="false" />
+            <element signature="e#13841#13847#0#HTML" expanded="false" />
+            <element signature="e#13847#13853#0#HTML" expanded="false" />
+            <element signature="e#13853#13859#0#HTML" expanded="false" />
+            <element signature="e#13859#13865#0#HTML" expanded="false" />
+            <element signature="e#13865#13871#0#HTML" expanded="false" />
+            <element signature="e#13871#13877#0#HTML" expanded="false" />
+            <element signature="e#13937#13943#0#HTML" expanded="false" />
+            <element signature="e#13943#13949#0#HTML" expanded="false" />
+            <element signature="e#13949#13955#0#HTML" expanded="false" />
+            <element signature="e#13955#13961#0#HTML" expanded="false" />
+            <element signature="e#13961#13967#0#HTML" expanded="false" />
+            <element signature="e#13967#13973#0#HTML" expanded="false" />
+            <element signature="e#14049#14055#0#HTML" expanded="false" />
+            <element signature="e#14055#14061#0#HTML" expanded="false" />
+            <element signature="e#14061#14067#0#HTML" expanded="false" />
+            <element signature="e#14112#14118#0#HTML" expanded="false" />
+            <element signature="e#14118#14124#0#HTML" expanded="false" />
+            <element signature="e#14124#14130#0#HTML" expanded="false" />
+            <element signature="e#14221#14227#0#HTML" expanded="false" />
+            <element signature="e#14227#14233#0#HTML" expanded="false" />
+            <element signature="e#14233#14239#0#HTML" expanded="false" />
+            <element signature="e#14281#14287#0#HTML" expanded="false" />
+            <element signature="e#14287#14293#0#HTML" expanded="false" />
+            <element signature="e#14293#14299#0#HTML" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/polls/templates/twss/teacher/index_teacher_class_schedule/index_teacher_class_schedul_add.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="552">
+          <caret line="24" column="27" lean-forward="false" selection-start-line="24" selection-start-column="27" selection-end-line="24" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/polls/templates/twss/teacher/index_teacher_class_schedule/index_teacher_class_schedule_form.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="575">
+          <caret line="25" column="43" lean-forward="false" selection-start-line="25" selection-start-column="43" selection-end-line="25" selection-end-column="43" />
+          <folding>
+            <element signature="e#1283#1677#0#HTML" expanded="false" />
+            <element signature="e#1726#1877#0#HTML" expanded="false" />
+            <element signature="e#1937#2116#0#HTML" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/polls/templates/twss/teacher/teacher.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="309">
+          <caret line="42" column="11" lean-forward="true" selection-start-line="42" selection-start-column="11" selection-end-line="42" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/polls/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5451">
+          <caret line="303" column="19" lean-forward="false" selection-start-line="303" selection-start-column="19" selection-end-line="303" selection-end-column="19" />
+          <folding>
+            <element signature="e#24#52#0" expanded="true" />
+            <element signature="e#2927#6824#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/polls/AccountForms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="236">
+          <caret line="294" column="0" lean-forward="true" selection-start-line="294" selection-start-column="0" selection-end-line="294" selection-end-column="0" />
+          <folding>
+            <element signature="e#23#47#0" expanded="true" />
+            <element signature="e#337#1487#0" expanded="false" />
+            <element signature="e#1532#2295#0" expanded="false" />
+            <element signature="e#2345#3330#0" expanded="false" />
+            <element signature="e#3375#3997#0" expanded="false" />
+            <element signature="e#4048#4681#0" expanded="false" />
+            <element signature="e#4720#6547#0" expanded="false" />
+            <element signature="e#7952#8175#0" expanded="false" />
+            <element signature="e#8392#9017#0" expanded="false" />
+            <element signature="e#9071#9740#0" expanded="false" />
+            <element signature="e#10117#10211#0" expanded="false" />
+            <element signature="e#10413#11012#0" expanded="false" />
+            <element signature="e#11053#11616#0" expanded="false" />
+            <element signature="e#12564#17940#0" expanded="false" />
+            <element signature="e#17983#18311#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/polls/templates/twss/department_header/management_of_teacher_resource/management_of_teacher_resource_edit.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="268">
+          <caret line="52" column="21" lean-forward="true" selection-start-line="52" selection-start-column="21" selection-end-line="52" selection-end-column="21" />
+          <folding>
+            <element signature="n#script#1;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/polls/templates/twss/department_header/management_of_teacher_resource/management_of_teacher_resource.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="363">
+          <caret line="87" column="22" lean-forward="false" selection-start-line="87" selection-start-column="22" selection-end-line="87" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/polls/templates/twss/Academic_officer/basic_infomation/class_info/class_excel_upload.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="30" column="24" lean-forward="true" selection-start-line="30" selection-start-column="24" selection-end-line="30" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/polls/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="227">
+          <caret line="2877" column="90" lean-forward="true" selection-start-line="2877" selection-start-column="90" selection-end-line="2877" selection-end-column="90" />
+          <folding>
+            <element signature="e#49#59#0" expanded="true" />
+            <element signature="e#5891#7512#0" expanded="false" />
+            <element signature="e#7584#9678#0" expanded="false" />
+            <element signature="e#7784#8039#0" expanded="false" />
+            <element signature="e#8086#8341#0" expanded="false" />
+            <element signature="e#8388#8488#0" expanded="false" />
+            <element signature="e#8535#8790#0" expanded="false" />
+            <element signature="e#9748#12350#0" expanded="false" />
+            <element signature="e#9948#10129#0" expanded="false" />
+            <element signature="e#10176#10440#0" expanded="false" />
+            <element signature="e#10487#11513#0" expanded="false" />
+            <element signature="e#11560#11744#0" expanded="false" />
+            <element signature="e#12423#13917#0" expanded="false" />
+            <element signature="e#12665#12951#0" expanded="false" />
+            <element signature="e#13007#13293#0" expanded="false" />
+            <element signature="e#13978#14902#0" expanded="false" />
+            <element signature="e#14969#20635#0" expanded="false" />
+            <element signature="e#20715#22966#0" expanded="false" />
+            <element signature="e#23049#24897#0" expanded="false" />
+            <element signature="e#24946#25028#0" expanded="false" />
+            <element signature="e#25079#25161#0" expanded="false" />
+            <element signature="e#25216#25331#0" expanded="false" />
+            <element signature="e#25386#25501#0" expanded="false" />
+            <element signature="e#25556#25671#0" expanded="false" />
+            <element signature="e#25704#27724#0" expanded="false" />
+            <element signature="e#27945#28104#0" expanded="false" />
+            <element signature="e#28178#28884#0" expanded="false" />
+            <element signature="e#29542#29776#0" expanded="false" />
+            <element signature="e#29863#30106#0" expanded="false" />
+            <element signature="e#30199#30373#0" expanded="false" />
+            <element signature="e#30455#30667#0" expanded="false" />
+            <element signature="e#30760#30934#0" expanded="false" />
+            <element signature="e#31011#31226#0" expanded="false" />
+            <element signature="e#31319#31488#0" expanded="false" />
+            <element signature="e#31567#31774#0" expanded="false" />
+            <element signature="e#31867#32036#0" expanded="false" />
+            <element signature="e#32132#32303#0" expanded="false" />
+            <element signature="e#32377#32583#0" expanded="false" />
+            <element signature="e#32676#32844#0" expanded="false" />
+            <element signature="e#32962#33794#0" expanded="false" />
+            <element signature="e#33920#36796#0" expanded="false" />
+            <element signature="e#34115#35992#0" expanded="false" />
+            <element signature="e#36019#36382#0" expanded="false" />
+            <element signature="e#36942#39656#0" expanded="false" />
+            <element signature="e#37064#37110#0" expanded="false" />
+            <element signature="e#37152#39145#0" expanded="false" />
+            <element signature="e#39164#39656#0" expanded="false" />
+            <element signature="e#39783#39975#0" expanded="false" />
+            <element signature="e#40099#41105#0" expanded="false" />
+            <element signature="e#41176#41483#0" expanded="false" />
+            <element signature="e#42381#43194#0" expanded="false" />
+            <element signature="e#43323#46522#0" expanded="false" />
+            <element signature="e#43687#43944#0" expanded="false" />
+            <element signature="e#43987#44245#0" expanded="false" />
+            <element signature="e#45630#46472#0" expanded="false" />
+            <element signature="e#45700#45789#0" expanded="false" />
+            <element signature="e#45826#45916#0" expanded="false" />
+            <element signature="e#45951#46042#0" expanded="false" />
+            <element signature="e#46077#46156#0" expanded="false" />
+            <element signature="e#46679#47186#0" expanded="false" />
+            <element signature="e#47334#51991#0" expanded="false" />
+            <element signature="e#50086#51991#0" expanded="false" />
+            <element signature="e#51132#51504#0" expanded="false" />
+            <element signature="e#52118#52422#0" expanded="false" />
+            <element signature="e#52552#53221#0" expanded="false" />
+            <element signature="e#53348#55843#0" expanded="false" />
+            <element signature="e#55142#55796#0" expanded="false" />
+            <element signature="e#55983#56425#0" expanded="false" />
+            <element signature="e#56563#58269#0" expanded="false" />
+            <element signature="e#58400#58992#0" expanded="false" />
+            <element signature="e#59124#59796#0" expanded="false" />
+            <element signature="e#59925#61855#0" expanded="false" />
+            <element signature="e#60469#60920#0" expanded="false" />
+            <element signature="e#62002#62454#0" expanded="false" />
+            <element signature="e#64436#64971#0" expanded="false" />
+            <element signature="e#65097#65639#0" expanded="false" />
+            <element signature="e#65762#67029#0" expanded="false" />
+            <element signature="e#67151#67537#0" expanded="false" />
+            <element signature="e#67670#68842#0" expanded="false" />
+            <element signature="e#69000#70187#0" expanded="false" />
+            <element signature="e#70295#70654#0" expanded="false" />
+            <element signature="e#70783#71192#0" expanded="false" />
+            <element signature="e#71304#71482#0" expanded="false" />
+            <element signature="e#71588#73873#0" expanded="false" />
+            <element signature="e#73964#75398#0" expanded="false" />
+            <element signature="e#75497#76631#0" expanded="false" />
+            <element signature="e#76721#77377#0" expanded="false" />
+            <element signature="e#76891#76971#0" expanded="false" />
+            <element signature="e#77483#79264#0" expanded="false" />
+            <element signature="e#79359#80744#0" expanded="false" />
+            <element signature="e#80847#83171#0" expanded="false" />
+            <element signature="e#82578#82647#0" expanded="false" />
+            <element signature="e#82687#82937#0" expanded="false" />
+            <element signature="e#82956#83171#0" expanded="false" />
+            <element signature="e#84675#85342#0" expanded="false" />
+            <element signature="e#85444#87203#0" expanded="false" />
+            <element signature="e#85959#86200#0" expanded="false" />
+            <element signature="e#87292#88670#0" expanded="false" />
+            <element signature="e#88770#91235#0" expanded="false" />
+            <element signature="e#91328#92633#0" expanded="false" />
+            <element signature="e#92718#93377#0" expanded="false" />
+            <element signature="e#93464#95224#0" expanded="false" />
+            <element signature="e#95324#97778#0" expanded="false" />
+            <element signature="e#97860#99258#0" expanded="false" />
+            <element signature="e#99347#100609#0" expanded="false" />
+            <element signature="e#100690#101356#0" expanded="false" />
+            <element signature="e#101439#103198#0" expanded="false" />
+            <element signature="e#103318#103521#0" expanded="false" />
+            <element signature="e#103634#103829#0" expanded="false" />
+            <element signature="e#103946#104149#0" expanded="false" />
+            <element signature="e#105255#107109#0" expanded="false" />
+            <element signature="e#107197#109216#0" expanded="false" />
+            <element signature="e#109256#110017#0" expanded="false" />
+            <element signature="e#110089#110902#0" expanded="false" />
+            <element signature="e#110974#112546#0" expanded="false" />
+            <element signature="e#114781#115261#0" expanded="false" />
+            <element signature="e#115383#115912#0" expanded="false" />
+            <element signature="e#116041#117875#0" expanded="false" />
+            <element signature="e#118001#118699#0" expanded="false" />
+            <element signature="e#118837#119042#0" expanded="false" />
+            <element signature="e#119178#120439#0" expanded="false" />
+            <element signature="e#120568#121824#0" expanded="false" />
+            <element signature="e#121955#122497#0" expanded="false" />
+            <element signature="e#122627#124450#0" expanded="false" />
+            <element signature="e#124577#125282#0" expanded="false" />
+            <element signature="e#125341#125557#0" expanded="false" />
+            <element signature="e#125696#126968#0" expanded="false" />
+            <element signature="e#127098#128563#0" expanded="false" />
+            <element signature="e#128688#129262#0" expanded="false" />
+            <element signature="e#129345#130628#0" expanded="false" />
+            <element signature="e#130760#131498#0" expanded="false" />
+            <element signature="e#131630#134056#0" expanded="false" />
+            <element signature="e#134115#134396#0" expanded="false" />
+            <element signature="e#134466#134734#0" expanded="false" />
+            <element signature="e#134792#135114#0" expanded="false" />
+            <element signature="e#135243#137690#0" expanded="false" />
+            <element signature="e#137785#139389#0" expanded="false" />
+            <element signature="e#139494#142919#0" expanded="false" />
+            <element signature="e#143049#143407#0" expanded="false" />
+            <element signature="e#143539#144772#0" expanded="false" />
+            <element signature="e#144334#144772#0" expanded="false" />
+            <element signature="e#144851#145689#0" expanded="false" />
+            <element signature="e#146201#146532#0" expanded="false" />
+            <element signature="e#146768#148826#0" expanded="false" />
+            <element signature="e#148121#148706#0" expanded="false" />
+            <element signature="e#149247#150533#0" expanded="false" />
+            <element signature="e#150584#151563#0" expanded="false" />
+            <element signature="e#151983#152996#0" expanded="false" />
+            <element signature="e#153424#154879#0" expanded="false" />
+            <element signature="e#154037#154759#0" expanded="false" />
+            <element signature="e#154972#159177#0" expanded="false" />
+            <element signature="e#158874#159175#0" expanded="false" />
+            <element signature="e#160388#160592#0" expanded="false" />
+            <element signature="e#160838#161044#0" expanded="false" />
+            <element signature="e#161378#161443#0" expanded="false" />
+            <element signature="e#161651#161716#0" expanded="false" />
+            <element signature="e#163600#163891#0" expanded="false" />
+            <element signature="e#163954#170788#0" expanded="false" />
+            <element signature="e#166265#167535#0" expanded="false" />
+            <element signature="e#167685#167717#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/polls/templates/twss/Academic_officer/basic_infomation/class_info/class_info.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="46" column="0" lean-forward="false" selection-start-line="46" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

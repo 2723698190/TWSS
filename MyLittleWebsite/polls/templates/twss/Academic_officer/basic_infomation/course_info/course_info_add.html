@@ -1,0 +1,52 @@
+{% load staticfiles %}
+<script src="{% static 'polls/js/alert_form_cancle.js' %}"></script>
+<link rel="stylesheet" href="{% static 'polls/css/academic_officer_alert.css' %}"/>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#add_submit").click(function () {
+            $.ajax({
+                type:"POST",
+                data:$("#form_target").serialize(),
+                url:"{% url 'polls:index_AO_course_info_add' %}",
+                datatype:"json",
+                success: function(data){
+                    if(data==1){
+                        $("#form").animate({top:'-400px'},function () {
+                            $("#form_load").html(" ");
+                            alert("已成功添加课程！");
+                            $("#loop").load("{% url 'polls:index_AO_course_info_select' %}");
+                        });
+                    }else {
+                        $("#form").animate({top:'-400px'},function () {
+                            $("#form_load").html(data);
+                        });
+                    }
+                },
+                error: function(data) {
+                    alert(data);
+                }
+            });
+        });
+    });
+</script>
+
+<div id="form">
+    <h2 id="new_index_title">课程信息</h2>
+    {% if index_new_course_form %}
+        <form method="post" id="form_target">
+            {% csrf_token %}
+            <table>
+                {{ index_new_course_form.as_table }}
+            </table>
+            <input class="button-group" id="add_submit" type="button" value="提交">
+            <a class="close-reveal-modal cancel_new_index_teacher">×</a>
+            <input class="cancel_new_index_teacher button-group" type="button" value="取消">
+        </form>
+    {% else %}
+        <p>未找到表单</p>
+    {% endif %}
+</div>
+<div id="cover">
+
+</div>

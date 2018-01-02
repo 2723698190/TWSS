@@ -1,0 +1,56 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src={% static "polls/js/jquery-2.1.1.min.js" %}></script>
+    <script type="text/javascript">
+        $(document).ready(function(){//jquery获取复选框值
+            $("#test_for_checkbox").click(function () {
+                $.ajax({
+                    type:"GET",
+                    data:$("#check_form").serialize(),
+                    url:"{% url 'polls:test_for_checkbox' %}",
+                    datatype:"json",
+                    success: function(data){
+                        $("#loop").html(data);
+                    },
+                    error: function(data) {
+                        alert(data);
+                    }
+                });
+
+            });
+            var isCheckAll = false;
+            $("#quanxuan").click(function () {
+                if (isCheckAll) {
+                    $("input[type='checkbox']").each(function() {
+                        this.checked = false;
+                    });
+                    isCheckAll = false;
+                } else {
+                    $("input[type='checkbox']").each(function() {
+                        this.checked = true;
+                    });
+                    isCheckAll = true;
+                }
+            });
+
+        });
+    </script>
+</head>
+<body>
+<form id="check_form" action="{% url 'polls:test_for_checkbox'%}">
+    <input type="checkbox" id="quanxuan">
+    <input type="checkbox" name="test" alt="1" value="1">
+    <input type="checkbox" name="test" alt="2" value="2">
+    <input type="checkbox" name="test" alt="3" value="3">
+    <br>
+    <input type="button" id="test_for_checkbox" value="提交">
+</form>
+<div id="loop">
+    jiaozai
+</div>
+</body>
+</html>

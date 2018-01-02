@@ -1,0 +1,330 @@
+{% load staticfiles %}
+<script type="text/javascript">
+    $(document).ready(function () {
+{#        $("#course").css({height: 40, bottom: -10, background:'rgba(255, 255, 255, 0.4)'}).siblings().css({height:30,bottom:-20,'background-color':'transparent'});#}
+        $("#course").css({background: 'black', color: 'white'});
+        $("#theory_class").show().siblings().hide();
+        $("#experiment_class").show();
+        $("#internship_class").show();
+        $("#submit").show();
+        $("#course").click(function() {
+            $(this).css({background: 'black', color: 'white'}).siblings().css({background: 'white', color: 'black'});
+            $("#theory_class").show().siblings().hide();
+            $("#experiment_class").show();
+            $("#internship_class").show();
+            $("#submit").show();
+        });
+        $("#achievement").click(function() {
+            $(this).css({background: 'black', color: 'white'}).siblings().css({background: 'white', color: 'black'});
+            $(".achievement_class").show().siblings().hide();
+            $("#submit").show();
+        });
+        $("#object").click(function() {
+            $(this).css({background: 'black', color: 'white'}).siblings().css({background: 'white', color: 'black'});
+            $(".object_class").show().siblings().hide();
+            $("#submit").show();
+        });
+        $("#competition").click(function() {
+            $(this).css({background: 'black', color: 'white'}).siblings().css({background: 'white', color: 'black'});
+            $(".competition_class").show().siblings().hide();
+            $("#submit").show();
+        });
+        $("#paper").click(function() {
+            $(this).css({background: 'black', color: 'white'}).siblings().css({background: 'white', color: 'black'});
+            $(".paper_class").show().siblings().hide();
+            $("#submit").show();
+        });
+        $("#submit_button").click(function () {
+            $.ajax({
+                type:"POST",
+                data:$("#coefficent_form").serialize(),
+                url:"{% url 'polls:index_AO_workload_coefficent' %}",
+                datatype:"json",
+                success: function(data){
+                    if(data==1){
+                        $("#div_user_info").load("{% url 'polls:index_AO_workload_coefficent' %}");
+                        alert("已成功修改工作量系数!")
+                    }else {
+                        alert("存在错误，取消修改");
+                        $("div_user_info").load(data);
+                    }
+                },
+                error: function(data) {
+                    alert(data);
+                }
+            });
+        })
+    })
+</script>
+
+
+{#{% for field in new_item_form.fields %}#}
+{#    {% if field.errors %}#}
+{#        {{ field.errors }}#}
+{#        {{ field.label_tag }}: {{ field }}#}
+{#    {% endif %}#}
+{#{% endfor %}#}
+
+<div class="title_top">
+    <h1 class="content_title">系数管理</h1>
+<div class="bur">
+    <div class="select">
+        <span class="select_option" id="course">课程</span><span class="select_option" id="achievement">教研成果</span><span class="select_option" id="object">本科教学项目</span><span class="select_option" id="competition">竞赛指导</span><span class="select_option" id="paper">论文指导</span>
+    </div>
+</div>
+</div>
+
+<div id="loop">
+    <form id="coefficent_form" method="post" enctype="multipart/form-data">
+<table>
+    {{ new_item_form.non_field_errors }}
+    <table id="theory_class" class="teaching teacher_table_style">
+        <tr>
+            <th>理论课</th>
+            <th>60人及以下</th>
+            <th>61人以上</th>
+{#            <th>86-125人</th>#}
+{#            <th>126-200人</th>#}
+{#            <th>201人及以上</th>#}
+        </tr>
+        <tr>
+            <td>系数</td>
+            <td><span>1</span></td>
+            <td><span>1+0.6&timesln(R&divide60)</span></td>
+{#            <td>{{ new_item_form.L_L_less_four_zero }}</td>#}
+{#            <td>{{ new_item_form.L_L_less_eight_five }}</td>#}
+{#            <td>{{ new_item_form.L_L_less_one_two_five }}</td>#}
+{#            <td>{{ new_item_form.L_L_less_two_zero_zero }}</td>#}
+{#            <td>{{ new_item_form.L_L_more_two_zero_zero }}</td>#}
+        </tr>
+    </table>
+    <table id="experiment_class" class="teaching teacher_table_style">
+        <tr>
+            <th>实验课</th>
+            <th>专业课实验</th>
+            <th>计算机上机实验</th>
+            <th>开放实验</th>
+        </tr>
+        <tr>
+            <td>系数</td>
+            <td>{{ new_item_form.SY_Z_Y }}{{ new_item_form.SY_Z_Y.errors }}</td>
+            <td>{{ new_item_form.SY_S_J }}{{ new_item_form.SY_S_J.errors }}</td>
+            <td>{{ new_item_form.SY_K_F }}{{ new_item_form.SY_K_F.errors }}</td>
+        </tr>
+    </table>
+    <table id="internship_class" class="teaching teacher_table_style" >
+        <tr>
+            <th>实习实训</th>
+            <th>市内认识实习</th>
+            <th>外地认识 市内生产</th>
+            <th>外地生产 毕业实习等</th>
+        </tr>
+        <tr>
+            <td>系数</td>
+            <td>{{ new_item_form.SX_S_Q_R_S }}{{ new_item_form.SX_S_Q_R_S.errors }}</td>
+            <td>{{ new_item_form.SX_W_D_R_S }}{{ new_item_form.SX_W_D_R_S.errors }}</td>
+            <td>{{ new_item_form.SX_W_D_S_C }}{{ new_item_form.SX_W_D_S_C.errors }}</td>
+        </tr>
+    </table>
+    <table class="achievement_class teacher_table_style">
+        <tr>
+            <th>教研成果</th>
+            <th colspan="2">分类</th>
+            <th>分值</th>
+        </tr>
+        <tr>
+            <td rowspan="2">教研论文</td>
+            <td colspan="2">核心期刊</td>
+            <td>{{ new_item_form.JYLW_HX }}{{ new_item_form.JYLW_HX.errors }}</td>
+        </tr>
+        <tr>
+            <td colspan="2">一般</td>
+            <td>{{ new_item_form.JYLW_YB }}{{ new_item_form.JYLW_YB.errors }}</td>
+        </tr>
+        <tr>
+            <td rowspan="3">教改项目</td>
+            <td colspan="2">国家级</td>
+            <td>{{ new_item_form.JGXM_GJJ }}{{ new_item_form.JGXM_GJJ.errors }}</td>
+
+        </tr>
+        <tr>
+            <td colspan="2">省部级</td>
+            <td>{{ new_item_form.JGXM_SBJ }}{{ new_item_form.JGXM_SBJ.errors }}</td>
+
+        </tr>
+        <tr>
+            <td colspan="2">校级</td>
+            <td>{{ new_item_form.JGXM_XJ }}{{ new_item_form.JGXM_XJ.errors }}</td>
+        </tr>
+            <td rowspan="9">教学成果</td>
+            <td rowspan="3">国家级</td>
+            <td >特等</td>
+            <td>{{ new_item_form.JXCG_GT }}{{ new_item_form.JXCG_GT.errors }}</td>
+        <tr>
+            <td>一等</td>
+            <td>{{ new_item_form.JXCG_GY }}{{ new_item_form.JXCG_GY.errors }}</td>
+        </tr>
+        <tr>
+            <td>二等</td>
+            <td>{{ new_item_form.JXCG_GE }}{{ new_item_form.JXCG_GE.errors }}</td>
+        </tr>
+        <tr>
+            <td rowspan="3">省部级</td>
+            <td>特等</td>
+            <td>{{ new_item_form.JXCG_ST }}{{ new_item_form.JXCG_ST.errors }}</td>
+        </tr>
+        <tr>
+            <td>一等</td>
+            <td>{{ new_item_form.JXCG_SY }}{{ new_item_form.JXCG_SY.errors }}</td>
+        </tr>
+        <tr>
+            <td>二等</td>
+            <td>{{ new_item_form.JXCG_SE }}{{ new_item_form.JXCG_SE.errors }}</td>
+        </tr>
+        <tr>
+            <td rowspan="3">校级</td>
+            <td>特等</td>
+            <td>{{ new_item_form.JXCG_XT }}{{ new_item_form.JXCG_XT.errors }}</td>
+        </tr>
+        <tr>
+            <td>一等</td>
+            <td>{{ new_item_form.JXCG_XY }}{{ new_item_form.JXCG_XY.errors }}</td>
+        </tr>
+        <tr>
+            <td>二等</td>
+            <td>{{ new_item_form.JXCG_XE }}{{ new_item_form.JXCG_XE.errors }}</td>
+        </tr>
+
+
+        <tr>
+            <td rowspan="2">教材</td>
+            <td colspan="2" height="50px">全国统编教材、国家级规划教材、全国<br>教学专业指导委员会指定教材、<br>全国优秀教材</td>
+            <td>{{ new_item_form.JC_TS }}</td>
+        </tr>
+        <tr>
+            <td colspan="2">其他正式出版教材</td>
+            <td>{{ new_item_form.JC_YB }}</td>
+        </tr>
+    </table>
+    <table class="object_class teacher_table_style">
+        <tr>
+            <th>本科教学工程项目</th>
+            <th>分类</th>
+            <th>分值</th>
+
+        </tr>
+        <tr>
+            <td rowspan="3">专业、团队及实验中心类</td>
+            <td>国家级</td>
+            <td>{{ new_item_form.ZX_GJJ }}</td>
+        </tr>
+        <tr>
+            <td>省部级</td>
+            <td>{{ new_item_form.ZX_SBJ }}</td>
+        </tr>
+        <tr>
+            <td>校级</td>
+            <td>{{ new_item_form.ZX_XJ }}</td>
+        </tr>
+        <tr>
+            <td rowspan="3">课程类</td>
+            <td>国家级</td>
+            <td>{{ new_item_form.KC_GJJ }}</td>
+        </tr>
+        <tr>
+            <td>省部级</td>
+            <td>{{ new_item_form.KC_SBJ }}</td>
+        </tr>
+        <tr>
+            <td>校级</td>
+            <td>{{ new_item_form.KC_XJ }}</td>
+        </tr>
+        <tr>
+            <td>工程实践及教育中心类</td>
+            <td>国家级</td>
+            <td>{{ new_item_form.GCSJ }}</td>
+        </tr>
+        <tr>
+            <td rowspan="3">教学名师</td>
+            <td>国家级</td>
+            <td>{{ new_item_form.MS_GJJ }}</td>
+        </tr>
+        <tr>
+            <td>省部级</td>
+            <td>{{ new_item_form.MS_SBJ }}</td>
+        </tr>
+        <tr>
+            <td>校级</td>
+            <td>{{ new_item_form.MS_XJ }}</td>
+        </tr>
+        <tr>
+            <td rowspan="3">大学生创新创业训练</td>
+            <td>国家级</td>
+            <td>{{ new_item_form.DC_GJJ }}</td>
+        </tr>
+        <tr>
+            <td>省部级</td>
+            <td>{{ new_item_form.DC_SBJ }}</td>
+        </tr>
+        <tr>
+            <td>校级</td>
+            <td>{{ new_item_form.DC_XJ }}</td>
+        </tr>
+    </table>
+    <table class="competition_class teacher_table_style">
+        <tr>
+            <th>指导竞赛</th>
+            <th>分类</th>
+            <th>分值</th>
+        </tr>
+        <tr>
+            <td rowspan="3">全国性大学生学科竞赛</td>
+            <td>国家级</td>
+            <td>{{ new_item_form.QGXK_TD }}</td>
+        </tr>
+        <tr>
+            <td>省部级</td>
+            <td>{{ new_item_form.QGXK_YD }}</td>
+        </tr>
+        <tr>
+            <td>校级</td>
+            <td>{{ new_item_form.QGXK_ED }}</td>
+        </tr>
+        <tr>
+            <td rowspan="3">省部级大学生竞赛</td>
+            <td>国家级</td>
+            <td>{{ new_item_form.SBJS_TD }}</td>
+        </tr>
+        <tr>
+            <td>省部级</td>
+            <td>{{ new_item_form.SBJS_YD }}</td>
+        </tr>
+        <tr>
+            <td>校级</td>
+            <td>{{ new_item_form.SBJS_ED }}</td>
+        </tr>
+    </table>
+    <table class="paper_class teacher_table_style">
+        <tr>
+            <th>指导本科生发表学术论文</th>
+            <th>分值</th>
+        </tr>
+        <tr>
+            <td>SCI</td>
+            <td>{{ new_item_form.SCI }}</td>
+
+        </tr>
+        <tr>
+            <td>核心论文</td>
+            <td>{{ new_item_form.HX }}</td>
+        </tr>
+        <tr>
+            <td>一般</td>
+            <td>{{ new_item_form.YB }}</td>
+        </tr>
+    </table>
+</table>
+</form>
+                    <input class="new_button_group" id="submit_button" type="button" value="提交">
+                <input class="new_button_group" type="button" value="取消">
+</div>

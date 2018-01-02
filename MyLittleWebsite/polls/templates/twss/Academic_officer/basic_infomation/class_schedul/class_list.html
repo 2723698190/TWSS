@@ -1,0 +1,10 @@
+{% load staticfiles %}
+<div>
+    {% if iterm_list %}
+        {% for iterm in iterm_list %}
+            <span><input class="chexbox-style" type="checkbox" name="class_id_id" value="{{ iterm.class_card }}">{{ iterm.class_name }}</span>
+        {% endfor %}
+    {% else %}
+        <p>未找到班级</p>
+    {% endif %}
+</div>

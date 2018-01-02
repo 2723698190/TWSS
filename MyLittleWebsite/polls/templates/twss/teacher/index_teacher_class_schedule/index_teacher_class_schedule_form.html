@@ -1,0 +1,160 @@
+{% load staticfiles %}
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        {#        复选框计数器#}
+        function countChecked() {
+            var count = 0;
+            var checkedList=$("input[name='test']");
+            for (var i = 0; i<checkedList.length; i++){
+                if(checkedList[i].checked == true){
+                    count++;
+                }
+            }
+            return count
+        }
+        $("#pass").click(function () {
+            var counter=countChecked();
+            if(counter==0){
+                alert("请勾选要确认的记录！")
+            }else {
+                $.ajax({
+                    type:"GET",
+                    data:$("input[name='test']").serialize(),
+                    url:"{% url 'polls:index_teacher_class_pass' type %}",
+                    datatype:"json",
+                    success: function(ret){
+                        if(ret==="1"){
+                            $("#loop").load("{% url 'polls:index_teacher_class_select' type %}")
+                        }
+                    },
+                    error: function(data) {
+                        alert(data);
+                    }
+                });
+            }
+        });
+        var isCheckAll = false;
+        $("#check_all").click(function () {
+            if (isCheckAll) {
+                $("input[type='checkbox']").each(function() {
+                    this.checked = false;
+                });
+                isCheckAll = false;
+            } else {
+                $("input[type='checkbox']").each(function() {
+                    this.checked = true;
+                });
+                isCheckAll = true;
+            }
+        });
+        $(".reject_reason").click(function () {
+            href = $(this).attr("title");
+            $.get(href,function(ret){
+                $("#form_load" ).html(ret);
+            });
+        });
+        $("#index_new_class_schedule").click(function () {
+            $.get("{% url 'polls:index_teacher_new_class_schedule' %}", {type: '{{ type }}'}, function(ret){
+               $("#form_load" ).html(ret);
+            });
+        });
+        $(".edit").on("click",function () {
+            href = $(this).attr("alt");
+            $.get(href, {type: '{{ type }}'}, function(ret){
+                $("#form_load" ).html(ret);
+            });
+        });
+        $(".deleted").on("click",function () {
+            if(confirm("确认删除该课表记录？")){
+                href = $(this).attr("alt");
+                $.get(href,function () {
+                    $.post("{% url 'polls:index_teacher_class_select' type %}",function(ret){
+                        $("#loop").html(ret);
+                    });
+                });
+            }
+        });
+        $(".add").click(function () {
+            $.get("{% url 'polls:index_teacher_new_class_schedule' %}", {type: '{{ type }}'}, function(ret){
+               $("#form_load" ).html(ret);
+            });
+        });
+        $(".class_info").click(function () {
+            href = $(this).attr("title");
+            $.get(href,function(ret){
+                $("#form_load" ).html(ret);
+            });
+        });
+        $(".course_info").click(function () {
+            href = $(this).attr("title");
+            $.get(href,function(ret){
+                $("#form_load" ).html(ret);
+            });
+        });
+    })
+</script>
+
+
+<div class="title_top">
+    <h1 class="content_title">课程工作量</h1>
+    <div class="bur">
+        <div class="operater">
+            <input class="button_top" id="pass" type="button" value="确认">
+        </div>
+    </div>
+</div>
+<div class="title_down">
+<div id="loop">
+    <table class="teacher_table_style">
+        <tr>
+            <th><input type="checkbox" id="check_all"></th>
+            <th>年度</th>
+            <th>学期</th>
+            <th>课程</th>
+            <th>班级</th>
+            <th>状态</th>
+            <th>操作</th>
+        </tr>
+    {% if class_schedule_list %}
+    {% for schedule in class_schedule_list %}
+        <tr>
+            <td><input type="checkbox" name="test" value="{{ schedule.id }}"></td>
+            <td>{{ schedule.year }}</td>
+            <td>{{ schedule.get_term_display }}</td>
+            <td class="course_info" title="{% url 'polls:index_alert_course_info' schedule.course_id.Course_card %}">
+                {{ schedule.course_id.course_name }}</td>
+            <td class="class_info" title="{% url 'polls:index_alert_class_info' schedule.class_id.class_card %}">
+                {{ schedule.class_id.class_name }}</td>
+            {% if schedule.state < 3 %}
+                <td>{{ schedule.get_state_display }}</td>
+            {% else %}
+                <td class="reject_reason" title="{% url 'polls:index_alert_class_reject_reason' schedule.id %}">{{ schedule.get_state_display }}</td>
+            {% endif %}
+            <td>
+                <a>
+                    <img class="deleted" src="{% static 'polls/images/delete.png' %}" alt="{% url 'polls:index_AO_class_schedul_delete' schedule.id %}">
+                </a>
+                <a>
+                    <img class="edit" src="{% static 'polls/images/editer.png' %}" alt="{% url 'polls:index_teacher_edit_class_schedule' schedule.id %}">
+                </a>
+                <a>
+                    <img class="add" src="{% static 'polls/images/arrows_square_plus.png' %}">
+                </a>
+            </td>
+        </tr>
+    {% endfor %}
+    {% else %}
+        <tr>
+        <td colspan="11"><p>未找到记录</p></td>
+        </tr>
+        <tr>
+        <td id="index_new_class_schedule" colspan="11"><p>新增</p></td>
+        </tr>
+    {% endif %}
+    </table>
+</div>
+
+</div>
+
+<div id="form_load"></div>

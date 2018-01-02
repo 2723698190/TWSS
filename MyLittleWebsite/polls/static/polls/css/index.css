@@ -1,0 +1,40 @@
+#login_form{
+    background-color: rgba(187, 187, 187, 0.6);
+    width: 320px;
+    height: 200px;
+    position: relative;
+    top: 170px;
+    margin: 0 auto;
+    padding-top: 30px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.69);
+    border-radius: 10px;
+    z-index: 9;
+}
+#login{
+    width: 260px;
+    height: 30px;
+    background-color: #447c17;
+    border: 1px solid #447c17;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+#center{
+    background-image: url("../images/background_4.jpg");
+    -webkit-background-size: 100% 100%;
+    background-size: 100% 100%;
+}
+/*登陆表单样式*/
+.user_info_content_table tr th{
+    width: 100px;
+}
+.user_info_content_table tr td {
+    width: 200px;
+}
+.errorlist{
+    font-size: 10px;
+    color: #ff442c;
+}
+.content_title_down{
+    margin-top: 10px;
+}

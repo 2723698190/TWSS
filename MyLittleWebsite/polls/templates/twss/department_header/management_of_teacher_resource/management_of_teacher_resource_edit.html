@@ -1,0 +1,87 @@
+{% load staticfiles %}
+<script src="{% static 'polls/js/alert_form_cancle.js' %}"></script>
+<link rel="stylesheet" href="{% static 'polls/css/academic_officer_alert.css' %}"/>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#add_submit").click(function () {
+            $.ajax({
+                    type:"POST",
+                    data:$("#form_target").serialize(),
+                    url:"{% url 'polls:MOTRS_teacher_info_edit' teacher_id %}",
+                    datatype:"json",
+                    success: function(data){
+                        if(data==1){
+                            $("#form").animate({top:'-600px'},function () {
+                                $("#form_load").html(" ");
+                                $.post("{% url 'polls:management_of_teacher_resource_select' %}",{page:'{{ page }}',type:'{{ type }}',type_order:'{{ type_order }}' },function(ret){
+                                    $("#loop").html(ret);
+                                });
+                            });
+                        }else {
+                            $("#form").animate({top:'-600px'},function () {
+                                $("#form_load").html(data);
+                            });
+                        }
+                    },
+                    error: function(data) {
+                        alert(data)
+                    }
+                });
+        });
+    });
+</script>
+<style type="text/css">
+#form table td div{
+    width: 158px;
+    text-align: center;
+}
+    #yes, #no{
+        width: auto!important;
+    }
+</style>
+
+<div id="form">
+    {% if new_form_veiw %}
+        <form method="post" id="form_target">
+            {% csrf_token %}
+            <input type="hidden" name="type" value="{{ type }}">
+            <table>
+                <tr>
+                    <th>教师姓名:</th>
+                    <td><div>{{ user_name_form.first_name }}</div></td>
+                </tr>
+                <tr>
+                    <th>教师编号:</th>
+                    <td><div>{{ edit_teacher.profile.stuff_card }}</div></td>
+                </tr>
+                <tr>
+                    <th>教师账号:</th>
+                    <td><div>{{ edit_teacher.username }}</div></td>
+                </tr>
+                <tr>
+                    <th>重置密码:</th>
+                    <td>
+                        <div>
+                            <input id="yes" name="password_reset" type="radio" value="1">
+                            <label for="id_yes">是</label>
+                            <input id="no" name="password_reset" type="radio" value="0" checked="checked">
+                            <label for="id_no">否</label>
+                        </div>
+                    </td>
+                </tr>
+                {{ new_form_veiw.as_table }}
+            </table>
+            <input type="hidden" name="type_prder" value="{{ type_order }}">
+            <input type="hidden" name="page" value="{{ page }}">
+            <a class="close-reveal-modal cancel_new_index_teacher">×</a>
+            <input class="button-group" id="add_submit" type="button" value="提交">
+            <input class="cancel_new_index_teacher button-group" type="button" value="取消">
+        </form>
+    {% else %}
+        <p>error:can't find page</p>
+    {% endif %}
+</div>
+<div id="cover">
+
+</div>

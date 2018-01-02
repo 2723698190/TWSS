@@ -1,0 +1,159 @@
+{% load staticfiles %}
+<script src="{% static 'polls/js/alert_form_cancle.js' %}"></script>
+<link rel="stylesheet" href="{% static 'polls/css/academic_officer_alert.css' %}"/>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#add_submit").click(function () {
+            $.ajax({
+                type:"POST",
+                data:$("#form_target").serialize(),
+                url:"{% url 'polls:index_AO_class_schedul_add' %}",
+                datatype:"json",
+                success: function(data){
+                    if(data==1){
+                        $("#form").animate({top:'-400px'},function () {
+                            $("#form_load").html(" ");
+                            alert("已成功添加课表！");
+                            $("#loop").load("{% url 'polls:index_AO_class_schedul_select' %}");
+                        });
+                    }else {
+                        alert(data)
+                    }
+                },
+                error: function(data) {
+                    alert(data);
+                }
+            });
+
+        });
+        $("#from_teacher").keyup(function(){
+            var value = $(this).val();
+            $("#search_result_teacher").empty();
+            $.get("{% url 'polls:index_AO_teacher_list' %}",{'value':value}, function(data){
+                var k = 0;
+                for (var i = data.length - 1; i >= 0 && k<5; i--) {
+                    $("#search_result_teacher").append(data[i]+'<br/>');
+                    k++;
+                }
+            })
+        });
+        $("#from_teacher").keydown(function () {
+            $("#search_result_teacher").empty();
+        });
+        $("#from_teacher").blur(function () {
+            $("#search_result_teacher").empty();
+        });
+        $("#from_course").keyup(function(){
+            var value = $(this).val();
+            $("#search_result_course").empty();
+            $.get("{% url 'polls:index_AO_course_list' %}",{'value':value}, function(data){
+                var k = 0;
+                for (var i = data.length - 1; i >= 0 && k<5; i--) {
+                    $("#search_result_course").append(data[i]+'<br/>');
+                    k++;
+                }
+            })
+        });
+        $("#from_course").keydown(function () {
+            $("#search_result_course").empty();
+        });
+        $("#from_course").blur(function () {
+            $("#search_result_course").empty();
+        });
+        $("#grade").change(function () {
+            var grad=$("#grade").val();
+            if(!isNaN(grad)) {
+                $("#class_list").load("{% url 'polls:index_AO_class_list' %}", {"grade":grad});
+            }else{
+                alert(grad);
+                $("#class_list").html("<span>请先选择年级</span>");
+            }
+        })
+    });
+</script>
+<style type="text/css">
+    #search_result_teacher{
+        position: absolute;
+        top: 90px;
+        right: 105px;
+        width: 158px;
+        color: rgba(82,168,236,.6);
+        background-color: #ffffff;
+    }
+    #search_result_course{
+        position: absolute;
+        top: 116px;
+        right: 105px;
+        width: 158px;
+        color: rgba(82,168,236,.6);
+        background-color: #ffffff;
+    }
+    #class_list span{
+        color: #9d9d9d;
+    }
+</style>
+
+<div id="form">
+    <h2 id="new_index_title">课表管理</h2>
+        <form method="post" id="form_target">
+            {% csrf_token %}
+            <table>
+                <tr>
+                    <th>学期</th>
+                    <td>
+                        <select id="term" name="term">
+                            <option value="1">春期</option>
+                            <option value="2">秋期</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th>教师</th>
+                    <td>
+                        <input id="from_teacher" type="text" name="teacher">
+                    </td>
+                </tr>
+                <tr>
+                    <th>课程</th>
+                    <td>
+                        <input id="from_course" type="text" name="course">
+                    </td>
+                </tr>
+                <tr>
+                    <th>地点</th>
+                    <td>
+                        <input type="text" name="place">
+                    </td>
+                </tr>
+                <tr>
+                    <th>年级</th>
+                    <td>
+                        <select id="grade" name="grade">
+                            <option>请选择年级</option>
+                            {% for g in grade %}
+                                <option value="{{ g.0 }}">{{ g.0 }}</option>
+                            {% endfor %}
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" id="class"><h3 align="center">班级</h3></td>
+                </tr>
+                <tr>
+                    <td colspan="2" height="40px">
+                            <div id="class_list" align="center"><span>请先选择年级</span></div>
+                    </td>
+                </tr>
+                <p id="result_display_teacher"><span id="search_result_teacher"></span></p>
+                <p id="result_display_course"><span id="search_result_course"></span></p>
+            </table>
+            <input class="button-group" id="add_submit" type="button" value="提交">
+            <input class="cancel_new_index_teacher button-group" type="button" value="取消">
+            <a class="close-reveal-modal cancel_new_index_teacher">×</a>
+        </form>
+<label for="from_teacher" id="search_result_teacher"></label>
+</div>
+<div id="search_result_course"></div>
+<div id="cover">
+</div>

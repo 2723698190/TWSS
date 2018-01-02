@@ -1,0 +1,88 @@
+{% load staticfiles %}
+<script src="{% static 'polls/js/alert_form_cancle.js' %}"></script>
+<link rel="stylesheet" href="{% static 'polls/css/academic_officer_alert.css' %}"/>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#edit_submit").click(function () {
+            url = $("#edit_submit").attr("alt");
+            send = new FormData($('#form_target')[0]);
+            $.ajax({
+                    type:"POST",
+                    data:send,
+                    processData: false,
+                    contentType: false,
+                    url: url,
+                    datatype:"json",
+                    success: function(type){
+                        if (type==1){
+                            $("#form_load").html(" ");
+                            $("#jiao_yan_lun_wen").css(
+                                {height: 40, bottom: -6, background:'rgb(183, 183, 183)', color: '#FFFFFF'}
+                                ).siblings().css({height:30,bottom:-16,'background-color':'#FFFFFF',color:'black'});
+                            $("#index_new_jiao_yan_lun_wen" ).show().siblings().hide();
+                            $("#loop").load(
+                                "{% url 'polls:index_teacher_teaching_achievement_select' %}",{'type':type});
+                        }
+                        else if (type==2){
+                            $("#form_load").html(" ");
+                            $("#jiao_gai_xiang_mu").css(
+                                {height: 40, bottom: -6, background:'rgb(183, 183, 183)', color: '#FFFFFF'}
+                                ).siblings().css({height:30,bottom:-16,'background-color':'#FFFFFF',color:'black'});
+                            $("#index_new_jiao_gai_xiang_mu" ).show().siblings().hide();
+                            $("#loop").load(
+                                "{% url 'polls:index_teacher_teaching_achievement_select' %}",{'type':type});
+                        }
+                        else if(type==3){
+                            $("#form_load").html(" ");
+                            $("#jiao_xue_cheng_guo").css(
+                                {height: 40, bottom: -6, background:'rgb(183, 183, 183)', color: '#FFFFFF'}
+                                ).siblings().css(
+                                    {height:30,bottom:-16,'background-color':'#FFFFFF',color:'black'});
+                            $("#index_new_jiao_xue_cheng_guo" ).show().siblings().hide();
+                            $("#loop").load(
+                                "{% url 'polls:index_teacher_teaching_achievement_select' %}",{'type':type});
+                        }
+                        else if(type==4){
+                            $("#form_load").html(" ");
+                            $("#jiao_cai").css(
+                                {height: 40, bottom: -6, background:'rgb(183, 183, 183)', color: '#FFFFFF'}
+                                ).siblings().css(
+                                    {height:30,bottom:-16,'background-color':'#FFFFFF',color:'black'}
+                                    );
+                            $("#index_new_jiao_cai" ).show().siblings().hide();
+                            $("#loop").load(
+                                "{% url 'polls:index_teacher_teaching_achievement_select' %}",{'type':type});
+                        }
+                        else {
+                            $("#form_load").html(type);
+                        }
+                   },
+                    error: function() {
+                        alert("false");
+                    }
+                });
+        });
+    });
+</script>
+<div id="form">
+    <h2 id="new_index_title">{{ type }}</h2>
+    {% if index_new_teaching_achievement_form %}
+        <form method="post" id="form_target" enctype="multipart/form-data">
+            {% csrf_token %}
+            <input type="hidden" name="record_id" value="{{ achievement_id }}">
+            <table>
+                {{ index_new_teaching_achievement_form.as_table }}
+            </table>
+            <a class="close-reveal-modal cancel_new_index_teacher">×</a>
+            <input class="button-group" id="edit_submit" type="button"
+                   value="提交" alt="{% url 'polls:index_teacher_teaching_achievement_edit' achievement_id %}">
+            <input class="cancel_new_index_teacher button-group" type="button" value="取消">
+        </form>
+    {% else %}
+        <p>未找到表单</p>
+    {% endif %}
+</div>
+<div id="cover">
+
+</div>

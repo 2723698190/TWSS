@@ -1,0 +1,141 @@
+{% load staticfiles %}
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(".up_arrow").click(function () {
+            alert("up");
+            var type_ordered = $(this).attr("alt");
+            $("#loop").load("{% url 'polls:index_AO_class_info_select' %}",{type_order:type_ordered},function(){
+                alert("成功")
+            });
+        });
+        $(".down_arrow").click(function () {
+            alert("down");
+            var type_ordered = $(this).attr("alt");
+            $("#loop").load("{% url 'polls:index_AO_class_info_select' %}",{type_order:type_ordered},function(){
+                alert("成功")
+            });
+        });
+        $("#next_page").click(function (){
+            {% if class_info_list.has_next %}
+                {% if type_order %}
+                    $.post("{% url 'polls:index_AO_class_info_select' %}",{page:'{{ class_info_list.next_page_number }}',type:'{{ type }}',type_order:'{{ type_order }}' },function(data){
+                        $("#loop").html(data);
+                    });
+                {% else %}
+                    $.post("{% url 'polls:index_AO_class_info_select' %}",{page:'{{ class_info_list.next_page_number }}',type:'{{ type }}' },function(data){
+                        $("#loop").html(data);
+                    });
+                {% endif %}
+            {% endif %}
+        });
+        $("#previous_page").click(function () {
+            {% if class_info_list.has_previous %}
+                {% if type_order %}
+                    $.post("{% url 'polls:index_AO_class_info_select' %}",{page:'{{ class_info_list.previous_page_number }}',type:'{{ type }}',type_order:'{{ type_order }}' },function(data){
+                        $("#loop").html(data);
+                    });
+                {% else %}
+                    $.post("{% url 'polls:index_AO_class_info_select' %}",{page:'{{ class_info_list.previous_page_number }}',type:'{{ type }}' },function(data){
+                        $("#loop").html(data);
+                    });
+                {% endif %}
+            {% endif %}
+        });
+        $(".edit").on("click",function () {
+            href = $(this).attr("alt");
+            $.get(href, {page:'{{ class_info_list.number }}',type_order:'{{ type_order }}'}, function(ret){
+                $("#form_load" ).html(ret);
+            });
+        });
+        $(".deleted").on("click",function () {
+            if(confirm("确认删除该班级记录？")){
+                href = $(this).attr("alt");
+                $.get(href,function () {
+                    $.post("{% url 'polls:index_AO_class_info_select' %}",{page:'{{ class_info_list.page_number }}',type:'{{ type }}',type_order:'{{ type_order }}' },function(data){
+                            $("#loop").html(data);
+                    });
+                });
+            }else {
+                alert("已取消！")
+            }
+        });
+        $(".add").click(function () {
+            $.get("{% url 'polls:index_AO_class_info_add' %}", function(ret){
+               $("#form_load" ).html(ret);
+            });
+        });
+    });
+</script>
+
+<table class="teacher_table_style">
+<tr>
+    <th>
+        编号
+        <img class="up_arrow" src="{% static 'polls/images/up_arrow.png' %}" alt="card_up_arrow">
+        <img class="down_arrow" src="{% static 'polls/images/down_arrow.png' %}" alt="card_down_arrow">
+    </th>
+    <th>
+        班名
+        <img class="up_arrow" src="{% static 'polls/images/up_arrow.png' %}" alt="name_up_arrow">
+        <img class="down_arrow" src="{% static 'polls/images/down_arrow.png' %}" alt="name_down_arrow">
+    </th>
+    <th>
+        专业
+        <img class="up_arrow" src="{% static 'polls/images/up_arrow.png' %}" alt="major_up_arrow">
+        <img class="down_arrow" src="{% static 'polls/images/down_arrow.png' %}" alt="major_down_arrow">
+    </th>
+    <th>
+        年级
+        <img class="up_arrow" src="{% static 'polls/images/up_arrow.png' %}" alt="grade_up_arrow">
+        <img class="down_arrow" src="{% static 'polls/images/down_arrow.png' %}" alt="grade_down_arrow">
+    </th>
+    <th>人数
+        <img class="up_arrow" src="{% static 'polls/images/up_arrow.png' %}" alt="total_up_arrow">
+        <img class="down_arrow" src="{% static 'polls/images/down_arrow.png' %}" alt="total_down_arrow">
+    </th>
+    <th>操作</th>
+</tr>
+{% if class_info_list %}
+{% for class_info in class_info_list %}
+    <tr>
+        <td>{{ class_info.class_card }}</td>
+        <td>{{ class_info.class_name }}</td>
+        <td>{{ class_info.get_class_major_display }}</td>
+        <td>{{ class_info.grade }}</td>
+        <td>{{ class_info.total }}</td>
+        <td>
+            <a>
+                <img class="deleted" src="{% static 'polls/images/delete.png' %}" alt="{% url 'polls:index_AO_class_info_delete' class_info.class_card %}">
+            </a>
+            <a>
+{#                        {{ teacher.id }}#}
+                <img class="edit" src="{% static 'polls/images/editer.png' %}" alt="{% url 'polls:index_AO_class_info_edit' class_info.class_card %}">
+            </a>
+            <a>
+                <img class="add" src="{% static 'polls/images/arrows_square_plus.png' %}">
+            </a>
+        </td>
+    </tr>
+{% endfor %}
+{% else %}
+    <tr>
+                <td colspan="7"><span>未找到记录</span></td>
+    </tr>
+{% endif %}
+{% if class_info_list.has_other_pages %}
+    <tr id="paginator">
+                        <td colspan="7">
+                            {% if class_info_list.has_previous %}
+                                <a id="previous_page">上一页</a>
+                            {% endif %}
+                            <span class="current">
+                                {{ class_info_list.number }}/{{ class_info_list.paginator.num_pages }}
+                            </span>
+                            {% if class_info_list.has_next %}
+                                <a id="next_page" >下一页</a>
+                            {% endif %}
+                        </td>
+    </tr>
+{% endif %}
+</table>

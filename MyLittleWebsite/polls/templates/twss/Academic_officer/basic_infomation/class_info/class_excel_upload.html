@@ -1,0 +1,84 @@
+{% load staticfiles %}
+<script src="{% static 'polls/js/alert_form_cancle.js' %}"></script>
+<link rel="stylesheet" href="{% static 'polls/css/academic_officer_alert.css' %}"/>
+
+<script type="text/javascript">
+$(document).ready(function () {
+    $("#add_submit").click(function () {
+        {% if type == 1 %}
+            // 班级
+            var hrf = "{% url 'polls:excel_upload_class' %}";
+            var ul = "{% url 'polls:index_AO_class_info_select' %}";
+        {% elif type == 2 %}
+            //课程
+            var hrf = "{% url 'polls:excel_upload_course' %}";
+            var ul = "{% url 'polls:index_AO_course_info_select' %}";
+        {% elif type == 3 %}
+            //课表
+            var hrf = "{% url 'polls:excel_upload_class_schedul' %}";
+            var ul = "{% url 'polls:index_AO_class_schedul_select' %}";
+        {% elif type == 4 %}
+            //教师
+            var hrf = "{% url 'polls:excel_upload_teacher' %}";
+            var ul = "{% url 'polls:management_of_teacher_resource_select' %}";
+        {% else %}
+            alert("参数错误");
+        {% endif %}
+        var file_obj = $("#id_filepath")[0].files[0];
+        var form = new FormData();
+        form.append("file", file_obj);
+        $.ajax({
+            type:"POST",
+            data:form,
+            url: hrf,
+            processData: false,
+            contentType: false,
+            success: function(data){
+                if(data==1){
+                    $("#form").animate({top:'-400px'},function () {
+                        $("#form_load").html(" ");
+                        $.post(
+                            ul,
+                            {page:'{{ class_info_list.page_number }}',type:'{{ type }}',type_order:'{{ type_order }}' },
+                            function(data){
+                                $("#loop").html(data);
+                        });
+                    });
+                }else {
+                    alert(data);
+                }
+            },
+            error: function(data) {
+                alert(data);
+            }
+        });
+    });
+})
+</script>
+<style type="text/css">
+    #form_target{
+        margin-top: 20px;
+    }
+    .tips{
+        margin: 0 auto;
+        margin-top: 20px;
+        width: 275px;
+        color: #888888;
+    }
+</style>
+<div id="form">
+{% for field in form %}
+    <div class="tips">{{ title }}</div>
+{% endfor %}
+    <form id="form_target" enctype="multipart/form-data" method="post">
+        {% csrf_token %}
+        <p>{{ form.as_p }}</p>
+        <br/>
+        <input class="button-group" id="add_submit" type="button" value="上传">
+        <input class="cancel_new_index_teacher button-group" type="button" value="取消">
+        <a class="close-reveal-modal cancel_new_index_teacher">×</a>
+    </form>
+</div>
+<div id="cover">
+
+</div>

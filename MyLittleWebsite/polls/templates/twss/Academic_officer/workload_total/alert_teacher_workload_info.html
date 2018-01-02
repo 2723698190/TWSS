@@ -1,0 +1,151 @@
+{% load staticfiles %}
+<script src="{% static 'polls/js/alert_columns_form.js' %}"></script>
+<link rel="stylesheet" href="{% static 'polls/css/academic_officer_alert.css' %}"/>
+<style type="text/css">
+    #columns-form{
+        min-width: 700px;
+        min-height:150px;
+        position:fixed;
+        margin: 0 auto;
+        padding-top: 14px;
+        padding-bottom: 20px;
+        top: -600px;
+        left:50%;
+        margin-left:-275px;
+        -webkit-box-shadow: 0 0 10px rgba(0,0,0,.4);
+        z-index: 9999;
+        text-align: center;
+        background-color: ghostwhite;
+        border-radius: 5px;
+    }
+    .table_style{
+        margin: 0 auto;
+        width: 100%;
+        border-spacing: 0;
+        border-collapse: collapse;
+    }
+    .table_style tr th, .table_style tr td {
+{#        padding: 1px;#}
+    }
+</style>
+<div id="columns-form">
+        <div id="new_index_title"><h1>详细信息</h1></div>
+        <table class="table_style" border="0" cellpadding="0" cellspacing="0">
+   <tr>
+        <th class="border_top" rowspan="{{ teaching_workload_count }}">教学工作量<br>{{ workload.teaching_workload }}</th>
+        <td class="border_top" rowspan="{{ theory_course_list_count }}">理论课</td>
+        <td class="border_top" rowspan="{{ theory_course_list.count }}">{{ workload.theroy }}</td>
+        <td class="border_top">{{ theory_course_list.first.0 }}</td>
+        <td class="border_top">{{ theory_course_list.first.1 }}</td>
+   </tr>
+    {% for course in theory_course_list %}
+        {% if course == theory_course_list.first %}
+        {% else %}
+        <tr>
+            <td>{{ course.0 }}</td>
+            <td>{{ course.1 }}</td>
+        </tr>
+        {% endif %}
+    {% endfor %}
+    <tr>
+        <td class="border_top" rowspan="{{ experimental_course_list_count }}">实验课</td>
+        <td class="border_top">{{ workload.experiment }}</td>
+        <td class="border_top">{{ experimental_course_list.first.0 }}</td>
+        <td class="border_top">{{ experimental_course_list.first.1 }}</td>
+    </tr>
+    {% for course in experimental_course_list %}
+        {% if course == experimental_course_list.first %}
+        {% else %}
+        <tr>
+            <td>{{ course.0 }}</td>
+            <td>{{ course.1 }}</td>
+        </tr>
+        {% endif %}
+    {% endfor %}
+    <tr>
+        <td class="border_top" rowspan="{{ internship_course_list_count }}">实习/实训</td>
+        <td class="border_top">{{ workload.intermship }}</td>
+        <td class="border_top">{{ internship_course_list.first.0 }}</td>
+        <td class="border_top" >{{ internship_course_list.first.1 }}</td>
+    </tr>
+    {% for course in internship_course_list %}
+        {% if course == internship_course_list.first %}
+        {% else %}
+        <tr>
+            <td>{{ course.0 }}</td>
+            <td>{{ course.1 }}</td>
+        </tr>
+        {% endif %}
+    {% endfor %}
+
+    <tr>
+        <th class="border_top" rowspan="{{ searching_workload_count }}">教研工作量<br>{{ workload.searching_workload }}</th>
+        <td class="border_top" rowspan="{{ teaching_achievement_list_count }}">教学成果</td>
+        <td class="border_top" rowspan="{{ teaching_achievement_list_count }}">{{ workload.achievement }}</td>
+        <td class="border_top">{{ teaching_achievement_list.first.achievement }}</td>
+        <td class="border_top">{{ teaching_achievement_list.first.workload }}</td>
+    </tr>
+    {% for record in teaching_achievement_list %}
+        {% if record == teaching_achievement_list.first %}
+        {% else %}
+            <tr>
+                <td>{{ record.achievement }}</td>
+                <td>{{ record.workload }}</td>
+            </tr>
+        {% endif %}
+    {% endfor %}
+    <tr>
+        <td class="border_top" rowspan="{{ teaching_object_list_count }}">教学工程</td>
+        <td class="border_top" rowspan="{{ teaching_object_list_count }}">{{ workload.object }}</td>
+        <td class="border_top">{{ teaching_object_list.first.object }}</td>
+        <td class="border_top">{{ teaching_object_list.first.workload }}</td>
+    </tr>
+    {% for record in teaching_object_list %}
+        {% if record == teaching_object_list.first %}
+        {% else %}
+            <tr>
+                <td>{{ record.object }}</td>
+                <td>{{ record.workload }}</td>
+            </tr>
+        {% endif %}
+    {% endfor %}
+    <tr>
+        <td class="border_top" rowspan="{{ guid_competition_list_count }}">竞赛指导</td>
+        <td class="border_top" rowspan="{{ guid_competition_list_count }}">{{ workload.competition }}</td>
+        <td class="border_top">{{ guid_competition_list.first.competition }}</td>
+        <td class="border_top">{{ guid_competition_list.first.workload }}</td>
+    </tr>
+    {% for record in guid_competition_list %}
+        {% if record == guid_competition_list.first %}
+        {% else %}
+            <tr>
+                <td>{{ record.competition }}</td>
+                <td>{{ record.workload }}</td>
+            </tr>
+        {% endif %}
+    {% endfor %}
+    <tr>
+        <td class="border_top" rowspan="{{ guid_paper_list_count }}">论文指导</td>
+        <td class="border_top" rowspan="{{ guid_paper_list_count }}">{{ workload.paper }}</td>
+        <td class="border_top">{{ guid_paper_list.first.Paper }}</td>
+        <td class="border_top">{{ guid_paper_list.first.workload }}</td>
+    </tr>
+    {% for record in guid_paper_list %}
+        {% if record == guid_paper_list.first %}
+        {% else %}
+            <tr>
+                <td>{{ record.Paper }}</td>
+                <td>{{ record.workload }}</td>
+            </tr>
+        {% endif %}
+    {% endfor %}
+    <tr>
+        <th class="border_top border_bottom" colspan="5">总计{{ workload.total }}</th>
+    </tr>
+</table>
+        <input class=" button-group cancel_new_index_teacher" type="button" value="确认">
+<a class="close-reveal-modal cancel_new_index_teacher">×</a>
+    </div>
+<div id="cover">
+
+</div>

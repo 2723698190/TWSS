@@ -1,0 +1,109 @@
+{% load staticfiles %}
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#next_page").click(function (){
+                {% if paper_guide_list.has_next %}
+                    $.post("{% url 'polls:index_teacher_paper_guide_select' %}",{page:'{{ paper_guide_list.next_page_number }}',type:'{{ type }}' },function(data){
+                        $("#loop").html(data);
+                    });
+                {% endif %}
+        });
+        $("#index_new_paper_guide").click(function() {
+            $.get("{% url 'polls:index_teacher_paper_guide_add' %}",function(ret){
+               if (ret==1){
+                    alert("未到录入时间，暂禁用新增功能！");
+                }else {
+                    $("#form_load" ).html(ret)
+                }
+            });
+        });
+
+        $(".deleted").on("click",function () {
+            if(confirm("确认删除该记录？")){
+                href = $(this).attr("alt");
+                $.get(href,function () {
+                    $("#loop").load("{% url 'polls:index_teacher_paper_guide_select' %}");
+                });
+            }else {
+                alert("已取消")
+            }
+
+        });
+
+        $(".edit").on("click",function () {
+            href = $(this).attr("alt");
+            $.get(href,function(ret){
+                if(ret==0){
+                    alert("项目正在审核，暂无法修改！");
+                }else {
+                    $("#form_load" ).html(ret);
+                }
+            });
+        });
+
+
+    });
+
+</script>
+
+{#弹窗的实现#}
+
+<h1 class="content_title">本科论文指导</h1>
+<div class="search_bar">
+</div>
+<br>
+<br>
+<div id="form_content_teacher">
+    <div class="select">
+        <div id="zhi_dao_ben_ke_xue_shu_lun_wen">指导本科学术论文</div>
+    </div>
+    <div id="loop">
+    <table class="teacher_table_style">
+        <tr>
+            <th>年度</th>
+            <th>成果</th>
+            <th>类型</th>
+            <th>获奖</th>
+            <th>获奖时间</th>
+            <th>附件</th>
+            <th>工作量</th>
+            <th>审核状态</th>
+            <th>操作</th>
+        </tr>
+        {% if paper_guide_list %}
+        {% for paper_guide in paper_guide_list %}
+            <tr>
+                <td>{{ paper_guide.year }}</td>
+                <td>{{ paper_guide.Paper }}</td>
+                <td>{{ paper_guide.type }}</td>
+                <td>{{ paper_guide.get_level_display }}</td>
+                <td>{{ paper_guide.time }}</td>
+                <td>{{ paper_guide.file }}</td>
+                <td>{{ paper_guide.workload }}</td>
+                <td>{{ paper_guide.get_state_display }}</td>
+                <td>
+                    <a>
+                        <img class="deleted" src="{% static 'polls/images/delete.png' %}" alt="{% url 'polls:index_teacher_paper_guide_delete' paper_guide.id %}" >
+                    </a>
+                    <a>
+                        <img class="edit" src="{% static 'polls/images/editer.png' %}" alt="{% url 'polls:index_teacher_paper_guide_edit' paper_guide.id %}">
+                    </a>
+                </td>
+            </tr>
+        {% endfor %}
+        {% else %}
+            <tr>
+                <td colspan="9">记录未找到！请添加！</td>
+            </tr>
+        {% endif %}
+        <tr>
+            <td class="new_teaching_achievement" id="index_new_paper_guide" colspan="9">新增</td>
+        </tr>
+        </table>
+    </div>
+</div>
+
+
+<div id="form_load">
+
+</div>

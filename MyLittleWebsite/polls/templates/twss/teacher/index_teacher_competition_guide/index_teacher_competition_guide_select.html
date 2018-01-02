@@ -1,0 +1,137 @@
+{% load staticfiles %}
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#next_page").click(function (){
+                {% if competition_guide_list.has_next %}
+                    $.post("{% url 'polls:index_teacher_competition_guide_select' %}",{page:'{{ competition_guide_list.next_page_number }}',type:'{{ type }}' },function(data){
+                        $("#loop").html(data);
+                    });
+                {% endif %}
+        });
+        $("#previous_page").click(function () {
+            {% if competition_guide_list.has_previous %}
+                $.post("{% url 'polls:index_teacher_competition_guide_select' %}",{page:'{{ competition_guide_list.previous_page_number }}',type:'{{ type }}' },function(data){
+                    $("#loop").html(data);
+                });
+            {% endif %}
+        });
+
+        $(".edit").on("click",function () {
+            href = $(this).attr("alt");
+            $.get(href,function(ret){
+                if(ret==0){
+                    alert("项目正在审核，暂无法修改！");
+                }else {
+                    $("#form_load" ).html(ret);
+                }
+            });
+        });
+{#        添加新的项目#}
+        $("#index_new_quan_guo_xue_ke").click(function() {
+            var type=1;
+            $.get("{% url 'polls:index_teacher_competition_guide_add' %}",{'type':type},function(ret){
+               if (ret==1){
+                    alert("未到录入时间，暂禁用新增功能！");
+                }else {
+                    $("#form_load" ).html(ret)
+                }
+            });
+        });
+        $("#index_new_sheng_bu_ji").click(function() {
+            var type=2;
+            $.get("{% url 'polls:index_teacher_competition_guide_add' %}",{'type':type},function(ret){
+               if (ret==1){
+                    alert("未到录入时间，暂禁用新增功能！");
+                }else {
+                    $("#form_load" ).html(ret)
+                }
+            });
+        });
+        $(".deleted").on("click",function () {
+            if(confirm("确认删除该记录？")){
+                href = $(this).attr("alt");
+                $.get(href,function (ret) {
+                    var type=ret;
+                    if (type==1){
+                        $("#quan_guo_xue_ke").css({height: 40, bottom: -6, background:'rgb(183, 183, 183)', color: '#FFFFFF'}).siblings().css({height:30,bottom:-16,'background-color':'#FFFFFF',color:'black'});
+
+                        $("#index_new_quan_guo_xue_ke" ).show().siblings().hide();
+                    }
+                    else if (type==2){
+                        $("#sheng_bu_ji").css({height: 40, bottom: -6, background:'rgb(183, 183, 183)', color: '#FFFFFF'}).siblings().css({height:30,bottom:-16,'background-color':'#FFFFFF',color:'black'});
+
+                        $("#index_new_sheng_bu_ji" ).show().siblings().hide();
+                    }
+                    else {
+                        alert("error")
+                    }
+                    $("#loop").load("{% url 'polls:index_teacher_competition_guide_select' %}",{'type':type});
+                });
+            }else {
+                alert("已取消！")
+            }
+        });
+         $(".reject_reason").click(function () {
+            href = $(this).attr("title");
+            $.get(href,function(ret){
+                $("#form_load" ).html(ret);
+            });
+        });
+    });
+</script>
+
+    <table class="teacher_table_style">
+        <tr>
+            <th>年度</th>
+            <th>成果</th>
+            <th>类型</th>
+            <th>获奖</th>
+            <th>获奖时间</th>
+            <th>附件</th>
+            <th>工作量</th>
+            <th>审核状态</th>
+            <th>操作</th>
+        </tr>
+        {% if competition_guide_list %}
+        {% for competition in competition_guide_list %}
+            <tr>
+                <td>{{ competition.year }}</td>
+                <td>{{ competition.competition }}</td>
+                <td>{{ competition.get_type_display }}</td>
+                <td>{{ competition.get_level_display }}</td>
+                <td>{{ competition.time }}</td>
+                <td>{{ competition.file }}</td>
+                <td>{{ competition.workload }}</td>
+                {% if competition.state < 2 %}
+                    <td class="reject_reason" title="{% url 'polls:index_alert_CM_reject_reason' competition.id %}">{{ competition.get_state_display }}</td>
+                {% else %}
+                    <td>{{ competition.get_state_display }}</td>
+                {% endif %}
+                <td>
+                    <a>
+                        <img class="deleted" src="{% static 'polls/images/delete.png' %}" alt="{% url 'polls:index_teacher_competition_guide_delete' competition.id %}" >
+                    </a>
+                    <a>
+                        <img class="edit" src="{% static 'polls/images/editer.png' %}" alt="{% url 'polls:index_teacher_competition_guide_edit' competition.id %}">
+                    </a>
+                </td>
+            </tr>
+        {% endfor %}
+        {% else %}
+            <tr>
+                <td colspan="9">记录未找到！请添加！</td>
+            </tr>
+        {% endif %}
+    <tr>
+        {% if type == '1' %}
+    {#    全国性大学生学科竞赛#}
+            <td class="new_teaching_achievement" id="index_new_quan_guo_xue_ke" colspan="9">新增</td>
+        {% elif type == '2' %}
+    {#    省部级大学生竞赛#}
+            <td class="new_teaching_achievement" id="index_new_sheng_bu_ji" colspan="9">新增</td>
+        {% else %}
+{#            <td>格式错误</td>#}
+        {% endif %}
+    </tr>
+        </table>

@@ -1,0 +1,58 @@
+{% load staticfiles %}
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#register").click(function () {
+            alert("本系统暂关闭用户注册功能，请联系管理员开启")
+        });
+        $("#forget_password").click(function () {
+            alert("请联系教务员找回密码");
+        });
+        $("#login").click(function () {
+            $.ajax({
+                type:"POST",
+                data:$("#login_form").serialize(),
+                url:"{% url 'polls:index_login' %}",
+                datatype:"json",
+                success: function(data){
+                    if(data==="1"){
+                        $(location).attr('href', "{% url 'polls:index_teacher' %}");
+                    }else if (data==='2'){
+                        $(location).attr('href', "{% url 'polls:index_academic_officer' %}");
+                    }else if (data==='31'){
+                        $(location).attr('href', "{% url 'polls:index_D_H_biotechnology' %}");
+                    }else if (data==='32'){
+                        $(location).attr('href', "{% url 'polls:index_D_H_bioinfomation' %}");
+                    }else if (data==='33'){
+                        $(location).attr('href', "{% url 'polls:index_D_H_bioobject' %}");
+                    }else {
+                        $("#load_login_form_div").html(data);
+                    }
+                },
+                error: function(data) {
+                    alert(data)
+                }
+            });
+        })
+    });
+    </script>
+<form id="login_form" method="post">
+    <div align="center">
+        <h2>用户登录</h2>
+        {{ login_form.non_field_errors }}
+    </div>
+    {% csrf_token %}
+    <table class="user_info_content_table">
+{#        {{ login_form.as_table }}#}
+        <tr>
+            <th>{{ login_form.username.label_tag }}</th>
+            <td>{{ login_form.username.errors }}{{ login_form.username }}</td>
+        </tr>
+        <tr>
+            <th>{{ login_form.username.label_tag }}</th>
+            <td>{{ login_form.password.errors }}{{ login_form.password }}</td>
+        </tr>
+    </table>
+    <div class="content_title_down" align="center">
+        <button id="login" type="button">登录</button>
+    </div>
+</form>

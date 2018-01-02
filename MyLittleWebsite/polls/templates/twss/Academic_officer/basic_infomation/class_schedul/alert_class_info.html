@@ -1,0 +1,42 @@
+{% load staticfiles %}
+<script src="{% static 'polls/js/alert_form_cancle.js' %}"></script>
+<link rel="stylesheet" href="{% static 'polls/css/academic_officer_alert.css' %}"/>
+
+<div id="form">
+    <h2 id="new_index_title">课表管理</h2>
+    {% if class %}
+        <form method="post" id="form_target">
+            {% csrf_token %}
+            <table>
+                <tr>
+                    <th>年级</th>
+                    <td>{{ class.grade }}</td>
+                </tr>
+                <tr>
+                    <th>班级编号</th>
+                    <td>{{ class.class_card }}</td>
+                </tr>
+
+                <tr>
+                    <th>班级名</th>
+                    <td>{{ class.class_name }}</td>
+                </tr>
+                <tr>
+                    <th>所属专业</th>
+                    <td>{{ class.get_class_major_display }}</td>
+                </tr>
+                <tr>
+                    <th>人数</th>
+                    <td>{{ class.total }}</td>
+                </tr>
+            </table>
+            <a class="close-reveal-modal cancel_new_index_teacher">×</a>
+            <input class="cancel_new_index_teacher button-group" type="button" value="确定">
+        </form>
+    {% else %}
+        <p>无法找到该课程</p>
+    {% endif %}
+</div>
+<div id="cover">
+
+</div>

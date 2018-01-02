@@ -1,0 +1,44 @@
+{% load staticfiles %}
+<script src="{% static 'polls/js/alert_columns_form.js' %}"></script>
+<link rel="stylesheet" href="{% static 'polls/css/academic_officer_alert.css' %}"/>
+<style type="text/css">
+    #columns-form{
+        width: 500px;
+        min-height:150px;
+        position:fixed;
+        margin: 0 auto;
+        padding-top: 14px;
+        padding-bottom: 20px;
+        top: -600px;
+        left:50%;
+        margin-left:-275px;
+        -webkit-box-shadow: 0 0 10px rgba(0,0,0,.4);
+        z-index: 9999;
+        text-align: center;
+        background-color: ghostwhite;
+        border-radius: 5px;
+    }
+</style>
+<div id="columns-form" align="center">
+    <div id="new_index_title">工作量下载</div>
+    <table class="user_info_content_table">
+        <tr>
+            <td><a href="{% url 'polls:some_excel_ret_view' 0 %}">全部下载</a></td>
+            <td><a href="{% url 'polls:some_excel_ret_view' 1 %}">生物技术</a> </td>
+        </tr>
+        <tr>
+            <td><a href="{% url 'polls:some_excel_ret_view' 2 %}">生物信息</a></td>
+            <td><a href="{% url 'polls:some_excel_ret_view' 3 %}">生物工程</a></td>
+        </tr>
+    </table>
+    <input class="cancel_new_index_teacher button-group" type="button" value="确定">
+    <a class="close-reveal-modal cancel_new_index_teacher">×</a>
+</div>
+<div id="cover">
+
+</div>
+
+
+
+
+
